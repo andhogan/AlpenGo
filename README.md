@@ -1,2 +1,2 @@
-# AKA
-AKA Team Project Software Development 3308
+# Team 2: AKA
+Team 2: AKA Project Software Development 3308
