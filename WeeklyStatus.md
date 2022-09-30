@@ -34,6 +34,7 @@ ___
 # Session 1
 09/29/2022
 
+1. **Weekly Standup**
   * What did you do last week?
     **AJ-
     **KS-
