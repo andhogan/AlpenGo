@@ -33,3 +33,30 @@ ___
 
 # Session 1
 09/29/2022
+
+  * What did you do last week?
+    **AJ-
+    **KS-
+    **AH-
+  * What are you doing this week?
+    **AJ-
+    **KS-
+    **AH-
+  * Any obstacles?
+    **AJ-
+    **KS-
+    **AH-
+    
+2. **Sprint Retrospective**
+  * What went well?
+    **AJ-
+    **KS-
+    **AH-
+  * What dind't work?
+    **AJ-
+    **KS-
+    **AH-
+  * How can the team improve?
+    **AJ-
+    **KS-
+    **AH-
