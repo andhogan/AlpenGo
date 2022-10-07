@@ -63,3 +63,39 @@ ___
     **AH-Regular Communication.
   
 3. **End of Sprint Demo**
+
+# Session 2: 10/6/2022
+
+1. **Weekly Standup**
+  * What did you do last week?
+    **AJ- Mountain peak template
+    **KS- Preliminary design of the homepage.
+    **AH- Transitions and links between pages.
+  * What are you doing this week?
+       Week 4 Milestone Requirements for:
+    **AJ- Mountain specific pages and full list of mnts page
+    **KS- Login/User Profile and Home Page
+    **AH- About and Achievements/Progress
+  * Any obstacles?
+    **AJ- Understanding what data is needed and parameters.
+    **KS- Never used SQL or Flask, not sure what exactly the parameters or data to render means.
+    **AH- Flask
+    
+2. **Sprint Retrospective**
+  * What went well?
+    **AJ- Made a good plan and executed it well.
+    **KS- Cohesive design
+    **AH- Got everything assigned completed., communication and sharing.
+  * What dind't work?
+    **AJ- specifics on tools to complete the project arent known yet.
+    **KS- Plan ahead a little
+    **AH- We need to figure out when to assign tasks and collaborate on effort levels.
+  * How can the team improve?
+    **AJ- Keeping up with labs and understanding the tools we are learning.
+    **KS- weekly standup at the end of meeting
+    **AH- Create user stories throughout the week and in meeting. Use user story template from first week.
+
+3. **End of Sprint Notes
+   * Overall Effort Level:
+   * Individual Effort Levels:
+<img width="1145" alt="Screen Shot 2022-10-06 at 6 47 19 PM" src="https://user-images.githubusercontent.com/112372198/194443237-eec50941-4e49-4e5b-9226-3f048a100c1b.png">
