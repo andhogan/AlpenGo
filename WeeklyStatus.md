@@ -95,7 +95,7 @@ ___
     **KS- weekly standup at the end of meeting
     **AH- Create user stories throughout the week and in meeting. Use user story template from first week.
 
-3. **End of Sprint Notes
-   * Overall Effort Level:
-   * Individual Effort Levels:
+3. **End of Sprint Demo**
+   * Overall Effort Level: 15
+   * Individual Effort Levels: 5
 <img width="1145" alt="Screen Shot 2022-10-06 at 6 47 19 PM" src="https://user-images.githubusercontent.com/112372198/194443237-eec50941-4e49-4e5b-9226-3f048a100c1b.png">
