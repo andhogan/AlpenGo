@@ -67,7 +67,7 @@ Peak selection passed from the Peak Selection page, user information for the use
 ###### Data needed to render the page
 Peak information including all trail information (i.e. class, elevations, length, etc…), image of peak and trailhead map, user stats for the peak pulled from database.
 
-######
+###### Link destination for this page
 https://www.alpengo.com/peak
 
 ###### List of tests for verifying the rendering of the page
@@ -81,5 +81,58 @@ https://www.alpengo.com/peak
   - Ensure this page can be reached by the Peak Selection Page.  
   - Ensure clicking on Log Route reaches the Log Hike Page.
 
+___
+### Peak Selection Page
 
+###### Page Description
+This page will list all the trails available on the site, allowing the user to use a scroll bar to navigate through it.  Each peak will be separated by a row and will show a picture of the peak as well as the class, elevation, and length.  A column will indicate if the peak has already been logged or not.
 
+![Peak Template](https://user-images.githubusercontent.com/104743365/196848463-8551ff1b-b726-4a67-8d93-e3d8e4e820f9.JPG)
+
+###### Parameters needed for the page
+User to know who is logged in to the site, Hike Completed Flag indicating if the trail has already been completed.
+
+###### Data needed to render the page
+Peak stats pulled from the database, user stats pulled from the database, images for each peak on the site.
+
+###### Link destination for this page
+https://www.alpengo.com/listpeaks
+
+###### List of tests for verifying the rendering of the page
+- Unit Test
+  - test_climbed – ensure the Hike Completed Flag indicates the correct peaks for each user.
+- Acceptance Test
+  - Ensure the data is being formatted properly in an HTML table
+  - Ensure the images are aligned with the correct peak.
+  - Ensure the scroll bar works as intended.
+- Integration Test
+  - Ensure the page can be accessed from the Home Page.
+
+___
+### Log Hike Page
+
+###### Page Description
+This page will allow the user to input data to signal that the current peak has been hiked.  This will be a proxy method of simulating data capture by the AlpenGo system.  The user can input the date, starting time, and ending time of the hike, as well as the total miles, steps and average heart rate.
+
+![Peak Template](https://user-images.githubusercontent.com/104743365/196848463-8551ff1b-b726-4a67-8d93-e3d8e4e820f9.JPG)
+
+###### Parameters needed for the page
+User to know who is logged in, Peak from Peak Page.
+
+###### Data needed to render the page
+User stats for the peak, user input.
+
+###### Link destination for this page
+https://www.alpengo.com/peak/input
+
+###### List of tests for verifying the rendering of the page
+- Unit Test
+  - test_log – tests the submit button, ensuring the data is stored in the sql database properly.
+  - test_peak – ensure the data is displayed correctly for each user
+- Acceptance Test
+  - Ensure information is displayed correctly in HTML table
+  - Ensure window is centered on screen
+  - Ensure Save Log button works as intended
+- Integration Test
+  - Ensure Save Log stores data
+  - Ensure page can be accessed from the Peak Page
