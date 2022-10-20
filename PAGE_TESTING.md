@@ -162,6 +162,8 @@ ___
 ###### Page Description
 This page is accessible from the home page and allows the user to enter their credentials and access their personalized stats and information.
 
+![AlpenGo - LogIn Page](https://user-images.githubusercontent.com/112372198/197002511-28700d44-b704-40a2-baec-e8b042922a4b.jpg)
+
 ###### Parameters needed for the page
 Email and Password
 
