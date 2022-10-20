@@ -114,7 +114,7 @@ ___
 ###### Page Description
 This page will allow the user to input data to signal that the current peak has been hiked.  This will be a proxy method of simulating data capture by the AlpenGo system.  The user can input the date, starting time, and ending time of the hike, as well as the total miles, steps and average heart rate.
 
-![Peak Template](https://user-images.githubusercontent.com/104743365/196848463-8551ff1b-b726-4a67-8d93-e3d8e4e820f9.JPG)
+![Hikers Log Template](https://user-images.githubusercontent.com/104743365/196848837-c0f78b57-4276-467d-8b1c-044890e0b04c.JPG)
 
 ###### Parameters needed for the page
 User to know who is logged in, Peak from Peak Page.
