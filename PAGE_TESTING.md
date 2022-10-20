@@ -136,3 +136,31 @@ https://www.alpengo.com/peak/input
 - Integration Test
   - Ensure Save Log stores data
   - Ensure page can be accessed from the Peak Page
+
+___
+### Home Page
+###### Page Description
+This will be the page that shows upon first accessing the site. From here, the user can sign in, look at the peak list, look at their stats, and navigate to the about page. 
+
+![Home Page Mockup](https://)
+
+###### Parameters needed for the page
+Links to all transition pages, user information to display after log in, local information to display peaks near the user.
+
+###### Data needed to render the page
+Location information from user, user information from log in, image and information of peaks near the user.
+
+###### Link destination for this page
+About, Log In, Peaks, Stats, Contact/Help
+
+###### List of tests for verifying the rendering of the page
+  Make sure the correct information is displayed and in the correct format. 
+	Ensure all transition links can be accessed.
+	Make sure that the user’s name is displayed correctly after logging in.
+___
+### Login Page
+###### Page Description
+###### Parameters needed for the page
+###### Data needed to render the page
+###### Link destination for this page
+###### List of tests for verifying the rendering of the page
