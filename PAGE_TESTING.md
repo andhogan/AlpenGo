@@ -142,7 +142,7 @@ ___
 ###### Page Description
 This will be the page that shows upon first accessing the site. From here, the user can sign in, look at the peak list, look at their stats, and navigate to the about page. 
 
-![Home Page Mockup](https://)
+![Home Page Mockup](<img src="MacintoshHD/Users/user/Downloads/AlpenGo-Home_Page.jpg">)
 
 ###### Parameters needed for the page
 Links to all transition pages, user information to display after log in, local information to display peaks near the user.
