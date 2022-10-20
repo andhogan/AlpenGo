@@ -160,7 +160,18 @@ About, Log In, Peaks, Stats, Contact/Help
 ___
 ### Login Page
 ###### Page Description
+This page is accessible from the home page and allows the user to enter their credentials and access their personalized stats and information.
+
 ###### Parameters needed for the page
+Email and Password
+
 ###### Data needed to render the page
+User input
+
 ###### Link destination for this page
+Home and submit login credentials
+
 ###### List of tests for verifying the rendering of the page
+	Make sure the inputted data matches login information stored in the user database.
+	Ensure the submit button works and pulls the user’s information for the rest of the pages.
+	Test that the page can be accessed from the home page.
