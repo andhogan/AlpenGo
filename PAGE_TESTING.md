@@ -1,5 +1,4 @@
-You will create a list of descriptions for the pages that will be implemented for your project.
-You must add a file PAGE_TESTING.md to your repository and provide the following for each page (at least 5 independent pages):
+Planned pages to Implement and information about each, including:
 
 
 Page Title 
