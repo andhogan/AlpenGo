@@ -52,3 +52,34 @@ Only users that are logged in should be able to see their own page via their Use
 - Establish trigger to update user profile with achievement upon updating a stat
 - Ensure users see their own user profile portal and subsequent achievement page
 - Ensure achievements are organized and highlighted
+
+___
+### Peak Page Template
+
+###### Page Description
+Each Peak listed on the site will use this template to display information relating to the peak and input user data.  User data will be listed if the trail has already been hiked and logged.  The user can access the Hike Log page from this page to input user data for this specific peak.
+
+![Peak Page Template](https://user-images.githubusercontent.com/104743365/196847877-b8e8e53e-783d-463e-a66e-eaf16d3ea619.JPG)
+
+###### Parameters needed for the page
+Peak selection passed from the Peak Selection page, user information for the user logged in, hiked completed flag indicating if the user has hiked the selected peak.
+
+###### Data needed to render the page
+Peak information including all trail information (i.e. class, elevations, length, etc…), image of peak and trailhead map, user stats for the peak pulled from database.
+
+######
+https://www.alpengo.com/peak
+
+###### List of tests for verifying the rendering of the page
+- Unit Test
+- - test_peak – Ensure trail stats are correctly shown for the selected peak.
+- - test_user_stats – Ensure user stats are displaying or null for the selected peak.
+- Acceptance Test
+- - Ensure information is properly displayed and in correct format.
+- - Ensure Log Route can be selected.
+- Integration Test
+- - Ensure this page can be reached by the Peak Selection Page.  
+- - Ensure clicking on Log Route reaches the Log Hike Page.
+
+
+
