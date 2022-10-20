@@ -72,14 +72,14 @@ https://www.alpengo.com/peak
 
 ###### List of tests for verifying the rendering of the page
 - Unit Test
-- - test_peak – Ensure trail stats are correctly shown for the selected peak.
-- - test_user_stats – Ensure user stats are displaying or null for the selected peak.
+  - test_peak – Ensure trail stats are correctly shown for the selected peak.
+  - test_user_stats – Ensure user stats are displaying or null for the selected peak.
 - Acceptance Test
-- - Ensure information is properly displayed and in correct format.
-- - Ensure Log Route can be selected.
+  - Ensure information is properly displayed and in correct format.
+  - Ensure Log Route can be selected.
 - Integration Test
-- - Ensure this page can be reached by the Peak Selection Page.  
-- - Ensure clicking on Log Route reaches the Log Hike Page.
+  - Ensure this page can be reached by the Peak Selection Page.  
+  - Ensure clicking on Log Route reaches the Log Hike Page.
 
 
 
