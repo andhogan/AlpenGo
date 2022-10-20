@@ -15,7 +15,7 @@ Link destinations for the page
 List of tests for verifying the rendering of the page
 
 ___
-##### About Page
+### About Page
 
 ###### Page Description
 The about page describes the website, the project, the team members.
@@ -34,7 +34,7 @@ This page is accessed from anywhere on the site via the dropdown menu
 Standard rendering of the page, much of this page is hard coded and implemented.
 
 ___
-##### Achievements Page
+### Achievements Page
 
 ###### Page Description
 This page details a user's acquired achievements. The page updates for the specific user as they acquire stats and complete trips. Achievements they've acquired should be colored in and positions at the top, while locked achievements will be grayed out. ![Achievements page drawing](https://user-images.githubusercontent.com/63213386/196830998-0add2e97-fdcd-48d3-b102-0cb0bd70856c.jpg)
