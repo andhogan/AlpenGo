@@ -99,3 +99,39 @@ ___
    * Overall Effort Level: 15
    * Individual Effort Levels: 5
 <img width="1145" alt="Screen Shot 2022-10-06 at 6 47 19 PM" src="https://user-images.githubusercontent.com/112372198/194443237-eec50941-4e49-4e5b-9226-3f048a100c1b.png">
+
+# Session 3
+10/20/2022
+
+1. **Weekly Standup**
+  * What did you do last week?
+    **AJ- 
+    **KS- 
+    **AH- 
+  * What are you doing this week?
+       Week 5 Milestone Requirements for:
+    **AJ- 
+    **KS- 
+    **AH- 
+  * Any obstacles?
+    **AJ- 
+    **KS- 
+    **AH- 
+    
+2. **Sprint Retrospective**
+  * What went well?
+    **AJ- 
+    **KS- 
+    **AH- 
+  * What dind't work?
+    **AJ- 
+    **KS- 
+    **AH- 
+  * How can the team improve?
+    **AJ- 
+    **KS- 
+    **AH- 
+
+3. **End of Sprint Demo**
+   * Overall Effort Level: 
+   * Individual Effort Levels: 
