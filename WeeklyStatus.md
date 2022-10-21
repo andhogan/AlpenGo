@@ -133,5 +133,5 @@ ___
     **AH- 
 
 3. **End of Sprint Demo**
-   * Overall Effort Level: 
-   * Individual Effort Levels: 
+   * Overall Effort Level: 15
+   * Individual Effort Levels: 5
