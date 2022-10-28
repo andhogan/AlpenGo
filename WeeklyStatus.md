@@ -170,6 +170,6 @@ ___
 
 3. **End of Sprint Demo**
    * Overall Effort Level: 15
-   * Individual Effort Levels: 5
-   * Expected Effort Level For Next Sprint: 15
+   * Individual Effort Levels: 6
+   * Expected Effort Level For Next Sprint: 18
 ___
