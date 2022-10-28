@@ -2,17 +2,17 @@
 
 1. **Weekly Standup**
   * What did you do last week?
-    **AJ- Planned out website pages, peak selection, peak template, and hike log and determined parameters, data, and tests needed to render the page.
-    **KS- Planned out website pages, login and home, and determined parameters, data, and tests needed to render the page.
-    **AH- Planned out website pages, about and achievements and determined parameters, data, and tests needed to render the page.
+    **AJ- 
+    **KS- 
+    **AH- 
   * What are you doing this week?
-    **AJ- Determine how best to create and join tables for database design for Milestone 5.
-    **KS- Determine how best to create and join tables for database design for Milestone 5.
-    **AH-Determine how best to create and join tables for database design for Milestone 5.
+    **AJ- 
+    **KS- 
+    **AH-
   * Any obstacles?
     **AJ- 
-    **KS- Figuring out the context of parameters and data for website design.
-    **AH- The time commitment for the HTML and & CSS lab.  
+    **KS- 
+    **AH- 
     
 2. **Sprint Retrospective**
   * What went well?
@@ -135,3 +135,41 @@ ___
    * Overall Effort Level: 15
    * Individual Effort Levels: 5
    * Expected Effort Level For Next Sprint: 15
+___
+
+# Session 4:
+10/27/2022
+
+1. **Weekly Standup**
+  * What did you do last week?
+    **AJ- Database Design and sketch.
+    **KS- Database Design and sketch.
+    **AH- Databse Design and sketch.
+  * What are you doing this week?
+    **AJ- Unit and Acceptance testing for peaks and user peaks.
+    **KS- Unit and Acceptance testing for Users.
+    **AH- Unit and Acceptance testing for achievements and user_achievements.
+  * Any obstacles?
+    **AJ- Not knowing what is expected for database tests.
+    **KS- Clarification on what is expected for testing.
+    **AH- Checking in and clarifying on what is needed for testing.
+    
+2. **Sprint Retrospective**
+  * What went well?
+    **AJ- General acceptance on what is needed for database tables.
+    **KS- Same gereral idea.  Table designs went smoothly.
+    **AH- Former material came in handy to visualize database design. 
+  * What dind't work?
+    **AJ- Felt this week went smoothly.
+    **KS- Time management.
+    **AH- Needed more info on testing.
+  * How can the team improve?
+    **AJ- Learning Javascript can help the team with the project.
+    **KS- Solidify understanding of the tools used in the project.
+    **AH- More research into the backend of web developement.
+
+3. **End of Sprint Demo**
+   * Overall Effort Level: 15
+   * Individual Effort Levels: 5
+   * Expected Effort Level For Next Sprint: 15
+___
