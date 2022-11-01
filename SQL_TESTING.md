@@ -22,15 +22,13 @@
   * Class (*Int*) – The difficulty of the hike.
   * Description (*VarChar*) – A description of the mountain peak and trail.
 ### List of Tests
-  * *test_numPeaks()* – Query the database to ensure the total count of distinct peaks is equal to 10.
-  * *test_peakNames()* – Pass in an array of peak names to ensure all peaks are stored in the database.
-  * *test_location()* – Pass in three peak names to ensure that their correct locations are returned.
-  * *test_elevation()* – Pass in three peak names to ensure that their starting, summit and elevation gains are returned correctly.
-  * *test_length()* – Pass in three peak names to ensure their correct length is returned.
-  * *test_avTime()* – Pass in three peak names to ensure their correct times are reported.
-  * *test_routeType()* – Pass in three peak names to ensure their correct route type is returned.
-  * *test_class()* – Pass in three peak names to ensure their correct classes are returned.
-  * *test_description()* – Pass in three peak names to ensure their correct description is returned.
+  * *test_addPeak()* - addPeak() will take in values for each field listed above and return True if successful or False if an error occured.  This test function will run a number of assert statements to:
+  ** Check if all fields are inserted with their correct type and are not null
+  ** Check if values are in correct range
+  ** Check if all peaks were added by querying databse
+  ** Check to make sure a distinct count produces the correct number of peaks after they are added.
+  * *test_deletePeak()* - deletePeak() will take in a peak name and delete the entry from the database. This test function will check to ensure the entry has been                               removed and the total count of entries has been reduced.
+  *  *test_modifyPeakAttr()* - modifyPeakAttr() will take in a peak name, a field name, and the corrected value, and will modify the entry.  This test fuction will run                               a number of assert statement on a number of entries to ensure it is working properly.
 
 ### Data Access Method 1
 
@@ -92,12 +90,12 @@
   * Steps (*Int*) – The total steps taken during the hike.
 ### List of Tests
 For all test, dummy data will be inserted into the database to create fake users and test data.
-* *test_distinctUsers()* – Query the database to ensure the correct number of distinct users has been entered into the database.
-* *test_time()* – Pass in three usernames and peaks to ensure the proper start time and end times have been logged in the database.
-* *test_miles()* – Pass in three usernames and peaks to ensure the proper miles are returned for each is returned.
-* *test_avHR()* – Pass in three usernames and peaks to ensure the correct avHR for each is returned.
-* *test_steps()* - Pass in three usernames and peaks to ensure the correct steps taken by each user for each hike is returned.
-
+* *test_logHike()* - logHike() will take in a username, peak name, and all related fields above and record the entry in the UserPeaks table within the databse.  This test function will use assert statements to ensure:
+** All entries are not null and valid types for each field.
+** The user and peak exists within the database.
+* *test_getPeakRecord() - getPeakRecord() will take in a username and peakname and will return null if no entry is found or return an array of data entries.  This test function will use a series of assert statements to ensure:
+** The user and peak exists in the database.
+** The data is returned properly.
 ### Data Access Method 1
 
 ### Use case name
