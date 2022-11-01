@@ -93,7 +93,9 @@ For all test, dummy data will be inserted into the database to create fake users
 * *test_logHike()* - logHike() will take in a username, peak name, and all related fields above and record the entry in the UserPeaks table within the databse.  This test function will use assert statements to ensure:
 ** All entries are not null and valid types for each field.
 ** The user and peak exists within the database.
-* *test_getPeakRecord() - getPeakRecord() will take in a username and peakname and will return null if no entry is found or return an array of data entries.  This test function will use a series of assert statements to ensure:
+** The data is stored in the database and can be queried.
+** The user cannot record the same hike twice.
+* *test_getPeakRecord()* - getPeakRecord() will take in a username and peakname and will return null if no entry is found or return an array of data entries.  This test function will use a series of assert statements to ensure:
 ** The user and peak exists in the database.
 ** The data is returned properly.
 ### Data Access Method 1
