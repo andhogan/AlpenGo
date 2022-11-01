@@ -10,27 +10,27 @@
 ### Table Description
   Database object to store all information related to each specific mountain peak listed on the website.
 ### Table Fields
-  *PeakID (*Int*) – Unique identifier to identify each peak.
-  *Name (*VarChar*) – The name of the mountain peak.
-  *Location (*Float*, *Float*) – Latitude and Longitude of the mountain peak.
-  *StartElevation (*Int*) – The starting elevation of the peak trail in feet.
-  *SummitElevation (*Int*) – The elevation at the mountain summit in feet.
-  *ElevationGain (*Int*) – The total elevation gain during the hike.
-  *Length (*Float*) – The total distance of the trail in miles.
-  *AvTime (*Float*) – The average time to completion for all hikers in hours.
-  *RouteType (*VarChar*) – A description of the type of trail for the peak.
-  *Class (*Int*) – The difficulty of the hike.
-  *Description (*VarChar*) – A description of the mountain peak and trail.
+  * PeakID (*Int*) – Unique identifier to identify each peak.
+  * Name (*VarChar*) – The name of the mountain peak.
+  * Location (*Float*, *Float*) – Latitude and Longitude of the mountain peak.
+  * StartElevation (*Int*) – The starting elevation of the peak trail in feet.
+  * SummitElevation (*Int*) – The elevation at the mountain summit in feet.
+  * ElevationGain (*Int*) – The total elevation gain during the hike.
+  * Length (*Float*) – The total distance of the trail in miles.
+  * AvTime (*Float*) – The average time to completion for all hikers in hours.
+  * RouteType (*VarChar*) – A description of the type of trail for the peak.
+  * Class (*Int*) – The difficulty of the hike.
+  * Description (*VarChar*) – A description of the mountain peak and trail.
 ### List of Tests
-  **test_numPeaks()* – Query the database to ensure the total count of distinct peaks is equal to 10.
-  **test_peakNames()* – Pass in an array of peak names to ensure all peaks are stored in the database.
-  **test_location()* – Pass in three peak names to ensure that their correct locations are returned.
-  **test_elevation()* – Pass in three peak names to ensure that their starting, summit and elevation gains are returned correctly.
-  **test_length()* – Pass in three peak names to ensure their correct length is returned.
-  **test_avTime()* – Pass in three peak names to ensure their correct times are reported.
-  **test_routeType()* – Pass in three peak names to ensure their correct route type is returned.
-  **test_class()* – Pass in three peak names to ensure their correct classes are returned.
-  **test_description()* – Pass in three peak names to ensure their correct description is returned.
+  * *test_numPeaks()* – Query the database to ensure the total count of distinct peaks is equal to 10.
+  * *test_peakNames()* – Pass in an array of peak names to ensure all peaks are stored in the database.
+  * *test_location()* – Pass in three peak names to ensure that their correct locations are returned.
+  * *test_elevation()* – Pass in three peak names to ensure that their starting, summit and elevation gains are returned correctly.
+  * *test_length()* – Pass in three peak names to ensure their correct length is returned.
+  * *test_avTime()* – Pass in three peak names to ensure their correct times are reported.
+  * *test_routeType()* – Pass in three peak names to ensure their correct route type is returned.
+  * *test_class()* – Pass in three peak names to ensure their correct classes are returned.
+  * *test_description()* – Pass in three peak names to ensure their correct description is returned.
 
 ### Data Access Method 1
 
