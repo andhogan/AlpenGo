@@ -23,12 +23,12 @@
   * Description (*VarChar*) – A description of the mountain peak and trail.
 ### List of Tests
   * *test_addPeak()* - addPeak() will take in values for each field listed above and return True if successful or False if an error occured.  This test function will run a number of assert statements to:
-  * * Check if all fields are inserted with their correct type and are not null
-  ** Check if values are in correct range
-  ** Check if all peaks were added by querying databse
-  ** Check to make sure a distinct count produces the correct number of peaks after they are added.
+    * Check if all fields are inserted with their correct type and are not null
+    * Check if values are in correct range
+    * Check if all peaks were added by querying databse
+    * Check to make sure a distinct count produces the correct number of peaks after they are added.
   * *test_deletePeak()* - deletePeak() will take in a peak name and delete the entry from the database. This test function will check to ensure the entry has been                               removed and the total count of entries has been reduced.
-  *  *test_modifyPeakAttr()* - modifyPeakAttr() will take in a peak name, a field name, and the corrected value, and will modify the entry.  This test fuction will run                               a number of assert statement on a number of entries to ensure it is working properly.
+  * *test_modifyPeakAttr()* - modifyPeakAttr() will take in a peak name, a field name, and the corrected value, and will modify the entry.  This test fuction will run                               a number of assert statement on a number of entries to ensure it is working properly.
 
 ### Data Access Method 1
 
@@ -91,13 +91,13 @@
 ### List of Tests
 For all test, dummy data will be inserted into the database to create fake users and test data.
 * *test_logHike()* - logHike() will take in a username, peak name, and all related fields above and record the entry in the UserPeaks table within the databse.  This test function will use assert statements to ensure:
-** All entries are not null and valid types for each field.
-** The user and peak exists within the database.
-** The data is stored in the database and can be queried.
-** The user cannot record the same hike twice.
+  * All entries are not null and valid types for each field.
+  * The user and peak exists within the database.
+  * The data is stored in the database and can be queried.
+  * The user cannot record the same hike twice.
 * *test_getPeakRecord()* - getPeakRecord() will take in a username and peakname and will return null if no entry is found or return an array of data entries.  This test function will use a series of assert statements to ensure:
-** The user and peak exists in the database.
-** The data is returned properly.
+  * The user and peak exists in the database.
+  * The data is returned properly.
 ### Data Access Method 1
 
 ### Use case name
