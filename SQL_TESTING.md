@@ -23,7 +23,7 @@
   * Description (*VarChar*) – A description of the mountain peak and trail.
 ### List of Tests
   * *test_addPeak()* - addPeak() will take in values for each field listed above and return True if successful or False if an error occured.  This test function will run a number of assert statements to:
-  ** Check if all fields are inserted with their correct type and are not null
+  * * Check if all fields are inserted with their correct type and are not null
   ** Check if values are in correct range
   ** Check if all peaks were added by querying databse
   ** Check to make sure a distinct count produces the correct number of peaks after they are added.
