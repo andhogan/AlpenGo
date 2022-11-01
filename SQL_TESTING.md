@@ -73,4 +73,52 @@
 ### Status (Pass/Fail)
   Pass
 ### Post-conditions
-  Peak information is validated through database and is displayed on screen.  
+  Peak information is validated through database and is displayed on screen.
+  
+## Table 2
+
+### Table Name
+  UserPeaks
+### Table Description
+  Database object to store all information related to peaks each user has hiked and forming a many-to-many relationship.
+### Table Fields
+  * UserID (*Int*) – Unique identifier to identify each user.
+  * PeakID (*Int*) – Unique identifier to identify each peak.
+  * Date (*Date*) – The date the user hiked the distinct peak.
+  * StartTime(*DateTime*) – The starting time that the user hiked the peak.
+  * EndTime (*DateTime*) – The ending time that the user finished the hike.
+  * Miles (*Float*) – The total miles hiked during the climb.
+  * AvHr (*Int*) – The average heat rate experienced by the user during the hike.
+  * Steps (*Int*) – The total steps taken during the hike.
+### List of Tests
+For all test, dummy data will be inserted into the database to create fake users and test data.
+* *test_distinctUsers()* – Query the database to ensure the correct number of distinct users has been entered into the database.
+* *test_time()* – Pass in three usernames and peaks to ensure the proper start time and end times have been logged in the database.
+* *test_miles()* – Pass in three usernames and peaks to ensure the proper miles are returned for each is returned.
+* *test_avHR()* – Pass in three usernames and peaks to ensure the correct avHR for each is returned.
+* *test_steps()* - Pass in three usernames and peaks to ensure the correct steps taken by each user for each hike is returned.
+
+### Data Access Method 1
+
+### Use case name
+  Verify the *Hike Log* button tracks user data.
+### Description
+  Test the *Hike Log* button by ensuring user input is stored within database.
+### Pre-conditions
+  User has an account, is logged in, and is on a specific peak page.
+### Test Steps
+  1. Login to user account.
+  2. Navigate to the page menu on the home page.
+  3. Click on *Peaks*.
+  4. Click on a specific peak in the list.
+  5. Click on Log Hike.
+  6. Fill in data for each field.
+  7. Click on Save Log.
+### Expected Results
+  The *Peak* page should be rendered with user data.
+### Actual Results
+  User is navigated back to *Peak* page and the user data is now displayed on screen.
+### Status (Pass/Fail)
+  Pass
+### Post-conditions
+  User can review his or her stats on the *Peak* page or navigate back to the *Peak Selection* page.
