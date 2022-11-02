@@ -122,3 +122,80 @@ For all test, dummy data will be inserted into the database to create fake users
   Pass
 ### Post-conditions
   User can review his or her stats on the *Peak* page or navigate back to the *Peak Selection* page.
+  
+___
+
+## Table 3
+
+### Table Name
+  Achievements
+### Table Description
+  Database object to store all information related achievements/badges users can acquire for attempting and/or completing hiking trails
+### Table Fields
+  * AchievementID (*Int*) - Unique identifier/Primary Key for uniquely identifying achievements
+  * Achievement (*Varchar*) - Name of the achievement
+  * Description (*Varchar*) - Description of the achievement/conditions for acquisition
+### List of Tests
+  * *test_addAchievement()* - addPeak() will take in values for each field listed above except ID and return True if successful or False if an error occured.  This test function will run a number of assert statements to:
+    * Check that inserted values are unique, abiding my primary key
+
+### Data Access Method 1
+
+### Use case name
+  Verify achievements render on users' profile pages
+### Description
+  Test the rendering of the *Achievement* page.
+### Pre-conditions
+  User has an account and is logged in.
+### Test Steps
+  1. Login to user account.
+  2. Navigate to the Achievement page within the user profile (maybe home menu)
+  3. Click on *Achievements*.
+### Expected Results
+  The *Achievement* page should be rendered with a list of available achievements along with their descriptions as to their acquisition.
+### Actual Results
+  User is navigated to *Achievement* page and can scroll through list.
+### Status (Pass/Fail)
+  Pass
+### Post-conditions
+  User can scroll the list of achievements, marveling at the ones they have acquired as well as challenging themselves to seek ones they haven't.  The page has successfully pulled from the database.
+  
+## Table 4
+
+### Table Name
+  UserAchievement
+### Table Description
+  Database object to store all information related to achievements each user has acquired and forming a many-to-many relationship. 
+### Table Fields
+  * UserID (*Int*) – Unique identifier to identify each user.
+  * AchievementID (*Int*) - A record of the achievement the user has acquired
+### List of Tests
+For all test, dummy data will be inserted into the database to create fake users and test data.
+* *test_awardAchievement()* - awardAchievement() will take in a username and an achievementID and add a record to the UserAchievement table.
+  * Assert the user is not receiving a duplicate entry.
+  * Assert the user has the qualifying conditions/stats for an achievement
+* *test_getUserAchievement()* - getUserAchievement() will take in a username and return all acquired Achievements the user currently possesses.
+  * The user exists in the Users table
+  * The data is rendered to page properly
+### Data Access Method 1
+
+### Use case name
+  Verify the *Achievements* page renders all acquired user achievements
+### Description
+  Test the *Achievement* page by ensuring appropriate achievements are listed at the top and colorized and unacquired achievements are below these and grayscaled. 
+### Pre-conditions
+  User has an account, is logged in, and isviewing the achievements page.
+### Test Steps
+  1. Login to user account.
+  2. Navigate to the User Profile on the home page.
+  3. Click on *User Profile*.
+  4. Click on *Achievements*.
+  5. View acquired achievements and read about ones yet to be acquired.
+### Expected Results
+  The *Achievements* page should be rendered with user data.
+### Actual Results
+  User is navigated to *Achievement* page and the user data is now displayed on screen.
+### Status (Pass/Fail)
+  Pass
+### Post-conditions
+  User can review his or her stats on the *Achievement* page and navigate away from this page.
