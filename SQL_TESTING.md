@@ -205,7 +205,7 @@ For all test, dummy data will be inserted into the database to create fake users
 ### Table Name
   Users
 ### Table Description
-  Database object to store all information related to the user. This will be a many to many relationship
+  Database object to store all information related to the user. This will be a many to many relationship.
 ### Table Fields
   * UserID (*Int*) – Unique identifier automatically generated.
   * FirstName (*VarChar*) – User input of their first name.
