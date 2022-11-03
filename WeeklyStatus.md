@@ -179,31 +179,31 @@ ___
 
 1. **Weekly Standup**
   * What did you do last week?
-    **AJ- Finalized database design and updated SQL_TESTING Document.  Finished Javascript lab.
-    **KS- 
-    **AH- 
+    * AJ- Finalized database design and updated SQL_TESTING Document.  Finished Javascript lab.
+    * KS- 
+    * AH- 
   * What are you doing this week?
-    **AJ- Creating html files for peak and peak selection.  Will work on implementing Flask app.
-    **KS- 
-    **AH- 
+    * AJ- Creating html files for peak and peak selection.  Will work on implementing Flask app.
+    * KS- 
+    * AH- 
   * Any obstacles?
-    **AJ- Better understanding of some features of Flask will help to mitigate errors.  Will conduct some indepenet research.
-    **KS- 
-    **AH- 
+    * AJ- Better understanding of some features of Flask will help to mitigate errors.  Will conduct some indepenet research.
+    * KS- 
+    * AH- 
    
 2. **Sprint Retrospective**
   * What went well?
-    **AJ- Gruop was able to define tests and data access methods that formed into a cohesive structure.
-    **KS- 
-    **AH- 
+    * AJ- Gruop was able to define tests and data access methods that formed into a cohesive structure.
+    * KS- 
+    * AH- 
   * What dind't work?
-    **AJ- Need to focus a little more on a getting a shell together for our app to help with implementation and testing.
-    **KS- 
-    **AH- 
+    * AJ- Need to focus a little more on a getting a shell together for our app to help with implementation and testing.
+    * KS- 
+    * AH- 
   * How can the team improve?
-    **AJ- Now that the tools are in place, we can start to execute the implenetation of our app.
-    **KS- 
-    **AH- 
+    * AJ- Now that the tools are in place, we can start to execute the implenetation of our app.
+    * KS- 
+    * AH- 
 
 3. **End of Sprint Demo**
    * Overall Effort Level: 15
