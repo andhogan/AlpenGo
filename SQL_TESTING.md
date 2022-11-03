@@ -199,3 +199,64 @@ For all test, dummy data will be inserted into the database to create fake users
   Pass
 ### Post-conditions
   User can review his or her stats on the *Achievement* page and navigate away from this page.
+
+## Table 5
+
+### Table Name
+  Users
+### Table Description
+  Database object to store all information related to the user. This will be a many to many relationship
+### Table Fields
+  * UserID (*Int*) – Unique identifier automatically generated.
+  * FirstName (*VarChar*) – User input of their first name.
+  * LastName (*VarChar*) – User input of their last name.
+  * UserName (*VarChar*) – Unique to the user, user input.
+  * EmailAddress (*VarChar*) – Unique user inputted contact information.
+  *Password (*VarChar*) – Unique user inputted statement that follows certain parameters.
+  *Location (*Float,Float*) – Longitude and Latitude of the user’s location.
+  *TotalDistance (*Float*) – Distance the user has personally hiked and logged correctly from the UserPeaks table.
+  *MountainsHiked (*VarChar*) - List of all mountain names taken from the UserPeaks table using PeakID.
+  *TotalTime (*Float*) - Total time it has taken the user to complete the total distance hiked. From the UserPeaks table.
+  *NumAchievements (*Int*) - Quick overview of how many achievements the user has accumulated. Takes AchievementID from the UserAchievement table.
+  *TotalElevGain (*Float*) - The total amount of elevation gained by the user along with the total distance and total time. Taken from the Peaks table.
+### List of Tests
+For all tests, dummy data will be inserted into the database to create fake users and test data.
+
+* *test_createAccount()* - createAccount() will take in a username, first name, last name, password, email address, and location. The information will be recorded in the Users table within the database. This test function will use assert statements to ensure:
+  * All entries are not null and valid types for each field.
+  * The user exists within the database after creation.
+  * The data is stored in the database and can be queried.
+  * The user has used unique input for all required fields.
+  * The password satisfies certain criteria.
+  * The username has been generated properly.
+
+* *test_getPeakStats()* - getPeakStats() will take in a userID and populate the Users table with information from the UserPeaks table and the Peaks table, which will use the PeakID from the UserPeaks table to connect the information. This test will ensure that :
+  * The data is returned properly.
+  * The UserID and PeakIDs are valid.
+* *test_getAchievementStats()* - getAchievementStats() will use the UserId to query the UserAchievement table and tally up the number of achievements the user has accumulated. It will be ensured that:
+  * The data is returned properly.
+  * The UserID is valid.
+  * The AchievementID is valid.
+### Data Access Method
+### Use case name
+  Verify the *Create Account* button takes in user input.
+### Description
+  Test the *Create Account* button by ensuring user input is stored within the database and is correct.
+### Pre-conditions
+  User has navigated to the webpage.
+### Test Steps
+  1. Type in the URL for the site.
+  2. Navigate to the page menu on the home page.
+  3. Click on *Log In*.
+  4. Click on *Create Account*.
+  5. Fill in all the required information.
+  6. Click *Save*.
+  7. Navigate back to the page menu and click *Profile*.
+### Expected Results
+  The *Profile* page should be rendered with user data.
+### Actual Results
+  User is navigated back to *Profile* page and the user data is now displayed on screen.
+### Status (Pass/Fail)
+  Pass
+### Post-conditions
+  User can review their stats on the *Profile* page or navigate back to the page menu and home page.
