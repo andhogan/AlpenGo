@@ -212,13 +212,13 @@ For all test, dummy data will be inserted into the database to create fake users
   * LastName (*VarChar*) – User input of their last name.
   * UserName (*VarChar*) – Unique to the user, user input.
   * EmailAddress (*VarChar*) – Unique user inputted contact information.
-  *Password (*VarChar*) – Unique user inputted statement that follows certain parameters.
-  *Location (*Float,Float*) – Longitude and Latitude of the user’s location.
-  *TotalDistance (*Float*) – Distance the user has personally hiked and logged correctly from the UserPeaks table.
-  *MountainsHiked (*VarChar*) - List of all mountain names taken from the UserPeaks table using PeakID.
-  *TotalTime (*Float*) - Total time it has taken the user to complete the total distance hiked. From the UserPeaks table.
-  *NumAchievements (*Int*) - Quick overview of how many achievements the user has accumulated. Takes AchievementID from the UserAchievement table.
-  *TotalElevGain (*Float*) - The total amount of elevation gained by the user along with the total distance and total time. Taken from the Peaks table.
+  * Password (*VarChar*) – Unique user inputted statement that follows certain parameters.
+  * Location (*Float,Float*) – Longitude and Latitude of the user’s location.
+  * TotalDistance (*Float*) – Distance the user has personally hiked and logged correctly from the UserPeaks table.
+  * MountainsHiked (*VarChar*) - List of all mountain names taken from the UserPeaks table using PeakID.
+  * TotalTime (*Float*) - Total time it has taken the user to complete the total distance hiked. From the UserPeaks table.
+  * NumAchievements (*Int*) - Quick overview of how many achievements the user has accumulated. Takes AchievementID from the UserAchievement table.
+  * TotalElevGain (*Float*) - The total amount of elevation gained by the user along with the total distance and total time. Taken from the Peaks table.
 ### List of Tests
 For all tests, dummy data will be inserted into the database to create fake users and test data.
 
