@@ -180,33 +180,33 @@ ___
 1. **Weekly Standup**
   * What did you do last week?
     * AJ- Finalized database design and updated SQL_TESTING Document.  Finished Javascript lab.
-    * KS- 
-    * AH- 
+    * KS- Finalized database design and updated SQL_TESTING Document.
+    * AH- Finalized database design and updated SQL_TESTING Document.
   * What are you doing this week?
     * AJ- Creating html files for peak and peak selection.  Will work on implementing Flask app.
-    * KS- 
-    * AH- 
+    * KS- Creating html file for home and create profile page.  
+    * AH- Creating html files for stats & achievements page.  Looking into backend programs w/ Flask and database softwares.
   * Any obstacles?
     * AJ- Better understanding of some features of Flask will help to mitigate errors.  Will conduct some indepenet research.
-    * KS- 
-    * AH- 
+    * KS- Time management as workload is full.
+    * AH- Deeper understanding of software for backend.
    
 2. **Sprint Retrospective**
   * What went well?
-    * AJ- Gruop was able to define tests and data access methods that formed into a cohesive structure.
-    * KS- 
-    * AH- 
+    * AJ- Group was able to define tests and data access methods that formed into a cohesive structure.
+    * KS- Took obstacles from last week and overcame them.  We were able to get it done.
+    * AH- All attened office hours and got clarification.
   * What dind't work?
     * AJ- Need to focus a little more on a getting a shell together for our app to help with implementation and testing.
-    * KS- 
-    * AH- 
+    * KS- Time management.  
+    * AH- School / life balance.  
   * How can the team improve?
     * AJ- Now that the tools are in place, we can start to execute the implenetation of our app.
-    * KS- 
-    * AH- 
+    * KS- Indepedent research and understanding of implementing html.  
+    * AH- Willingness to put in extra time on independent research will pay off.
 
 3. **End of Sprint Demo**
    * Overall Effort Level: 15
    * Individual Effort Levels: 3
-   * Expected Effort Level For Next Sprint: 
+   * Expected Effort Level For Next Sprint: 15
 ___
