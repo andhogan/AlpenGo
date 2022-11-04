@@ -230,6 +230,11 @@ For all tests, dummy data will be inserted into the database to create fake user
   * The password satisfies certain criteria.
   * The username has been generated properly.
 
+* *test_logIn()* - logIn() will take the username and password entered on the log in screen and return the connected user's account. If the credentials do not match any in the database, an error will be returned. It will ensure that:
+  * The username and password are stored in the database and that they match for one UserID.
+  * The log in button works as intended.
+  * The user's account is served to them correctly.
+
 * *test_getPeakStats()* - getPeakStats() will take in a userID and populate the Users table with information from the UserPeaks table and the Peaks table, which will use the PeakID from the UserPeaks table to connect the information. This test will ensure that :
   * The data is returned properly.
   * The UserID and PeakIDs are valid.
