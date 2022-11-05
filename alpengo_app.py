@@ -55,7 +55,7 @@ Peaks = [{
     'ElevGain': 5300,
     'Length': 11.00,
     'Avtime': 8.00,
-    'RoutType': 'Out and Back',
+    'RouteType': 'Out and Back',
     'Class': 2,
     'Description': 'The highest summit in Colorado, Mt Elbert offeres stunning views of the surrounding Rocky Mountains.'},
     {'PeakID': 2,
@@ -66,7 +66,7 @@ Peaks = [{
     'ElevGain': 1650,
     'Length': 5.25,
     'Avtime': 3.75,
-    'RoutType': 'Out and Back',
+    'RouteType': 'Out and Back',
     'Class': 3,
     'Description': 'Generally conisdered a challenging route, Mt Evans is one of six front range 14ers.  Keep an eye out for bighorn sheep and summer wildflowers.'},
     {'PeakID': 3,
@@ -77,19 +77,19 @@ Peaks = [{
     'ElevGain': 5300,
     'Length': 17.00,
     'Avtime': 9.75,
-    'RoutType': 'Out and Back',
+    'RouteType': 'Out and Back',
     'Class': 4,
     'Description': 'Often called the most difficult 14er in Colorado, its rugged terrain and extreme slopes will prove to be a challenge for even the most experienced hikers.'}
 ]
 
 Achievements = [{
-    'AchievmentID': 1,
+    'AchievementID': 1,
     'Achievement': 'First Hike',
     'Description': 'You have successfully hiked your first mountain!'},
-    {'AchievmentID': 2,
+    {'AchievementID': 2,
     'Achievement': 'Weekend Warrior',
     'Description': "You've logged tons of miles on the weekend!"},
-    {'AchievmentID': 2,
+    {'AchievementID': 2,
     'Achievement': 'Weekend Warrior',
     'Description': "You've logged tons of miles on the weekend!"}
 ]
@@ -131,17 +131,17 @@ UserPeaks = [{
 
 UserAchievment = [{
     'UserID': 1,
-    "AchievmentID": 2},
+    "AchievementID": 2},
     {'UserID': 2,
-    "AchievmentID": 1},
+    "AchievementID": 1},
     {'UserID': 2,
-    "AchievmentID": 2},
+    "AchievementID": 2},
     {'UserID': 2,
-    "AchievmentID": 3},
+    "AchievementID": 3},
     {'UserID': 3,
-    "AchievmentID": 1},
+    "AchievementID": 1},
     {'UserID': 3,
-    "AchievmentID": 2}
+    "AchievementID": 2}
 ]
 
 #############################################
