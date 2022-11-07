@@ -158,7 +158,7 @@ def about():
 
 @app.route('/peaks')
 def peakselection():
-    return render_template('peakselection.html', title='Peaks')
+    return render_template('peakselection.html', title='Peaks', peaks=Peaks)
 
 @app.route('/peak1')
 def peakpage():
