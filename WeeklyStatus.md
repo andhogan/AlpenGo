@@ -19,7 +19,7 @@
     * AJ-
     * KS-
     * AH-
-  * What dind't work?
+  * What didn't work?
     * AJ-
     * KS-
     * AH-
@@ -53,7 +53,7 @@ ___
     * AJ-Getting a solid start on the project with ideas and research.
     * KS-Team meetings are very productive.
     * AH-Each member contributed to backlog. 
-  * What dind't work?
+  * What didn't work?
     * AJ-Need better granularity in user cards.
     * KS-Too much space between communication.
     * AH-Getting used to Trello system and understanding effor levels.
@@ -86,7 +86,7 @@ ___
     * AJ- Made a good plan and executed it well.
     * KS- Cohesive design
     * AH- Got everything assigned completed., communication and sharing.
-  * What dind't work?
+  * What didn't work?
     * AJ- specifics on tools to complete the project arent known yet.
     * KS- Plan ahead a little
     * AH- We need to figure out when to assign tasks and collaborate on effort levels.
@@ -122,7 +122,7 @@ ___
     * AJ- Distrbuting work among the group lead to great page design.
     * KS- Everyone came up with great ideas on how to get the work completed & distributed the work well.
     * AH- Designing the pages was as a smooth process and went well.
-  * What dind't work?
+  * What didn't work?
     * AJ- Evyerthing went smooth but missed a page that needs to be created.
     * KS- Everyhting seemed to work well this week.
     * AH- Cohesiveness of visual design could be improved.
@@ -159,7 +159,7 @@ ___
     * AJ- General acceptance on what is needed for database tables.
     * KS- Same gereral idea.  Table designs went smoothly.
     * AH- Former material came in handy to visualize database design. 
-  * What dind't work?
+  * What didn't work?
     * AJ- Felt this week went smoothly.
     * KS- Time management.
     * AH- Needed more info on testing.
@@ -196,7 +196,7 @@ ___
     * AJ- Group was able to define tests and data access methods that formed into a cohesive structure.
     * KS- Took obstacles from last week and overcame them.  We were able to get it done.
     * AH- All attened office hours and got clarification.
-  * What dind't work?
+  * What didn't work?
     * AJ- Need to focus a little more on a getting a shell together for our app to help with implementation and testing.
     * KS- Time management.  
     * AH- School / life balance.  
