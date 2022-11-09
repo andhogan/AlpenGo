@@ -1,0 +1,4 @@
+# file to ignore tracking changes for
+# .DS_Store file in the AKA repository.
+
+.DS_Store
