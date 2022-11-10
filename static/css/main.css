@@ -3,8 +3,29 @@
 /* || GENERAL STYLES */
 
 /* || UTILITIES */
+* {
+    margin: 0.5px;
+    padding: 0.5px;
+    box-sizing: border-box;
+}
+body{
+    font-family: fantasy;
+}
+a {
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
 
 /* || SITEWIDE */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 2px solid black;
+}
 
 /* || APP PAGES */
 
