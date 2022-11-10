@@ -210,3 +210,39 @@ ___
    * Individual Effort Levels: 3
    * Expected Effort Level For Next Sprint: 15
 ___
+# Session 6:
+11/9/2022
+
+1. **Weekly Standup**
+  * What did you do last week?
+    * AJ- Set up the skeleton of project, peak and peak selection page outlines.
+    * KS- Built nav bar.
+    * AH- Achievements page html outline.
+  * What are you doing this week?
+    * AJ- log page, wtf forms, solidify peak page outline
+    * KS- login - forms, register, home page html, continue working on nav bar
+    * AH- how to integrate database, postgres? SQLite? Go to office hours.
+  * Any obstacles?
+    * AJ- new to wtf forms
+    * KS- getting familiar with bootstrap/wtf forms, going out of town this weekend.
+    * AH- balancing 3 classes
+   
+2. **Sprint Retrospective**
+  * What went well?
+    * AJ- first draft of app went well, everyone has access, links are working
+    * KS- really starting to have a concrete representation of work, more than just an idea
+    * AH- Teamwork!
+  * What didn't work?
+    * AJ- git branching did't work as intended
+    * KS- ended up working on something other than planned
+    * AH- Trello needs updated and cleaned up 
+  * How can the team improve?
+    * AJ- communication earlier in week especially with push/pull of repo
+    * KS- make a good plan for the week and stick to it
+    * AH- Trello updating
+    
+3. **End of Sprint Demo**
+   * Overall Effort Level: 
+   * Individual Effort Levels: 
+   * Expected Effort Level For Next Sprint: 
+___
