@@ -1,8 +1,11 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, flash, redirect
+from forms import LogForm
 # Place Holder for form fucntion definitions
 # from forms import 
 
 app = Flask(__name__)
+
+app.config['SECRET_KEY'] = '36e37b21094cafe5ecdfe25318e6e991'
 
 #############################################################
 # Below is dummy data we can leverage during our development.
@@ -79,7 +82,29 @@ Peaks = [{
     'Avtime': 9.75,
     'RouteType': 'Out and Back',
     'Class': 4,
-    'Description': 'Often called the most difficult 14er in Colorado, its rugged terrain and extreme slopes will prove to be a challenge for even the most experienced hikers.'}
+    'Description': 'Often called the most difficult 14er in Colorado, its rugged terrain and extreme slopes will prove to be a challenge for even the most experienced hikers.'},
+    {'PeakID': 4,
+    'Name': 'North Maroon Peak',
+    'Location': (39.070663, -106.988937),
+    'StartElev': 9590,
+    'SummitElev': 14022,
+    'ElevGain': 4500,
+    'Length': 9.25,
+    'Avtime': 7.00,
+    'RouteType': 'Out and Back',
+    'Class': 4,
+    'Description': 'One of the most iconic 14ers in Colorado, this picturesque mountain is a technical challenge, challenging hikers with its rugged terrain and route-finding.'},
+    {'PeakID': 3,
+    'Name': 'Quandary Peak',
+    'Location': (39.3972, -106.1064),
+    'StartElev': 10850,
+    'SummitElev': 14272,
+    'ElevGain': 3450,
+    'Length': 6.75,
+    'Avtime': 5.25,
+    'RouteType': 'Out and Back',
+    'Class': 1,
+    'Description': 'A beginner friendly summit, Quandary Peak is less than a two hour drive from Denver and offers panoramic views of the surrounding terrain.'},
 ]
 
 Achievements = [{
@@ -160,13 +185,24 @@ def about():
 def peakselection():
     return render_template('peakselection.html', title='Peaks', peaks=Peaks)
 
-@app.route('/peak1')
-def peakpage():
-    return render_template('peak.html', title='Peak 1')
+@app.route('/<peak>')
+def peakpage(peak):
+    userID = None
+    peakID = None
+    for p in Peaks:
+        if p['Name'] == peak:
+            selected = p
+            peakID = p['PeakID']
+            break
+    return render_template('peak.html', title=f'{peak}', peak=selected, userpeak=UserPeaks[2])
 
-@app.route('/log')
+@app.route('/log', methods=['GET', 'POST'])
 def log():
-    return render_template('log.html', title='Log')
+    form = LogForm()
+    if form.validate_on_submit():
+        flash('Your hike has been logged!', 'success')
+        return redirect(url_for('home'))
+    return render_template('log.html', title='Log', form=form)
 
 @app.route('/register')
 def register():

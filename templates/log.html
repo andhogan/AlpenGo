@@ -1,6 +1,70 @@
 {% extends "inherit.html" %}
 {% block content %}
-    <div>
-        <p>I am the Hike Loge Page!</p>
-    </div>
+    <main>
+        <div class="container text-center mx-auto" style="width: 30%">
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                <fieldset>
+                    <div class="row pt-2 pb-3 border-bottom">
+                        <div class="col-12">
+                            <h3>Log Hike</h3>
+                        </div>
+                    </div>
+                    <div class="row py-3 border-bottom">
+                        <div class="col-6">
+                            <h5>{{ form.date.label() }}</h5>
+                        </div>
+                        <div class="col-6">
+                            {{ form.date(class="form-control") }}
+                        </div>
+                    </div>
+                    <div class="row py-3 border-bottom">
+                        <div class="col-6">
+                           <h5>{{ form.startTime.label() }}</h5>
+                        </div>
+                        <div class="col-6">
+                            {{ form.startTime(class="form-control") }}
+                        </div>
+                    </div>
+                    <div class="row py-3 border-bottom">
+                        <div class="col-6">
+                            <h5>{{ form.endTime.label() }}</h5>
+                        </div>
+                        <div class="col-6">
+                            {{ form.endTime(class="form-control") }}
+                        </div>
+                    </div>
+                    <div class="row py-3 border-bottom">
+                        <div class="col-6">
+                            <h5>{{ form.miles.label() }}</h5>
+                        </div>
+                        <div class="col-6">
+                            {{ form.miles(class="form-control") }}
+                        </div>
+                    </div>
+                    <div class="row py-3 border-bottom">
+                        <div class="col-6">
+                            <h5>{{ form.avHR.label() }}</h5>
+                        </div>
+                        <div class="col-6">
+                            {{ form.avHR(class="form-control") }}
+                        </div>
+                    </div>
+                    <div class="row py-3 border-bottom">
+                        <div class="col-6">
+                            <h5>{{ form.steps.label() }}</h5>
+                        </div>
+                        <div class="col-5">
+                            {{ form.steps(class="form-control") }}
+                        </div>
+                    </div>
+                    <div class="row py-3">
+                        <div class="col-12">
+                            {{ form.submit(class="btn btn-primary btn-lg mx-auto") }}
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </main>
 {% endblock content %}

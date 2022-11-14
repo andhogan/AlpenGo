@@ -40,7 +40,9 @@
         <div>
             <div class="row" style="height: 15rem">
                 <div class="col-3">
-                    <img src="static/imgs/peak_imgs/{{ peak.Name }}.JPG" class="img-fluid float-left w-100 h-100 selection_img" alt="{{ peak.name }}">
+                    <a href="{{ url_for('peakpage', peak=peak.Name) }}">
+                        <img src="static/imgs/peak_imgs/{{ peak.Name }}.JPG" class="img-fluid float-left w-100 h-100 selection_img" alt="{{ peak.name }}">
+                </a>
                 </div>
                 <div class="col-2 my-auto">
                     {{ peak.Name }}
