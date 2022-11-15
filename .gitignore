@@ -2,3 +2,4 @@
 # .DS_Store file in the AKA repository.
 
 .DS_Store
+__pycache__
