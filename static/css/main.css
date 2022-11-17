@@ -25,6 +25,13 @@ a {
     border-bottom: 2px solid black;
 }
 
+.button {
+    background-color: rgb(171, 201, 211);
+    color: black;
+    border-radius: 4px;
+    padding: 10px;
+}
+
 /* || APP PAGES */
 
 /* Peak Selection Page */
