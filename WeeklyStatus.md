@@ -253,7 +253,7 @@ ___
 1. **Weekly Standup**
   * What did you do last week?
     * AJ- 
-    * KS- 
+    * KS- Created the html templates for the home page, login page, and register page.
     * AH- 
   * What are you doing this week?
     * AJ- 
@@ -267,15 +267,15 @@ ___
 2. **Sprint Retrospective**
   * What went well?
     * AJ-
-    * KS-
+    * KS- Finished the HTML pages and I really like how its all looking so far!
     * AH-
   * What didn't work?
     * AJ-
-    * KS-
+    * KS- Scheduling conflict with the weekly meeting. Sorry guys.
     * AH-
   * How can the team improve?
     * AJ-
-    * KS-
+    * KS- Communication, we are all busy and its hard sometimes.
     * AH-
 
 3. **End of Sprint Demo**
