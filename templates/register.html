@@ -1,4 +1,56 @@
 {% extends "inherit.html" %}
 {% block content %}
-<h1>Sign Up!</h1>
+<section class="h-100 h-custom" style="background-color: rgba(171, 201, 211, .6);">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-8 col-xl-6">
+          <div class="card rounded-3">
+            <img src="static/imgs/home_imgs/registration.jpeg"
+              class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+              alt="Sample photo">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Sign Up, Get Hiking!</h3>
+  
+              <form class="px-md-2">
+                <div class="row">
+                    <div class="col">
+                    <input type="text" id="reg1" class="form-control" />
+                    <label class="form-label" for="reg1">First Name</label>
+                    </div>
+                    <div class="col">
+                    <input type="text" id="reg1" class="form-control" />
+                    <label class="form-label" for="reg1">Last Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                    <input type="text" id="reg1" class="form-control" />
+                    <label class="form-label" for="reg1">Username</label>
+                    </div>
+                    <div class="col">
+                    <input type="text" id="reg1" class="form-control" />
+                    <label class="form-label" for="reg1">Password</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                    <input type="text" id="reg1" class="form-control" />
+                    <label class="form-label" for="reg1">Email</label>
+                    </div>
+                    <div class="col">
+                    <input type="text" id="reg1" class="form-control" />
+                    <label class="form-label" for="reg1">City, State</label>
+                    </div>
+                </div>
+  
+                <button type="submit" class="button">Submit</button>
+  
+              </form>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 {% endblock content %}
