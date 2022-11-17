@@ -206,11 +206,19 @@ def log():
 
 @app.route('/register')
 def register():
-    return render_template('register.html', title='Register')
+    form = LogForm()
+    if form.validate_on_submit():
+        flash('Thank you!', 'success')
+        return redirect(url_for('login'))
+    return render_template('register.html', title='Register', form=form)
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
-    return render_template('login.html', title='Login')
+    form = LogForm()
+    if form.validate_on_submit():
+        flash('Welcome!', 'success')
+        return redirect(url_for('achievements'))
+    return render_template('login.html', title='Login', form=form)
 
 @app.route('/achievements')
 def achievements():
