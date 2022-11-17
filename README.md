@@ -39,7 +39,7 @@ Ex: `python -m venv alpengo`
 * If error occurs, rollback to initial requirements:
 ** `pip uninstall -r requirements.txt`
 ** `pip install -r requirements.txt`
-* To capture the current list of packages installed for this project:
+* To capture the current list of packages installed, especially after including any additional ones that may have been installed and imported for this project:
 ** `pip freeze > requirements.txt`
 
 2. Run the included `alpengo_db.py` to initialize a SQLite DB with dummy data
