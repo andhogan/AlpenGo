@@ -24,30 +24,36 @@ Mitigation Strategy for Risks:
 
 Development Method: Scrum – Leverage agile and scrum methodologies to quickly add product value through weekly and biweekly sprints while balancing desired customer goals.
 
-### Setup
-0. (Optional) Recommended to create a virtual environment:
+## Setup
+### 0. (Optional) Recommended to create a virtual environment:
 
-`python -m venv dir_name`
+`python -m venv dir_name`    
 Ex: `python -m venv alpengo`
 * Clone the repo into this venv directory, and remember to activate the newly made venv before installing dependencies (next step).
 
-1. Install Dependencies from the included requirements.txt using a CLI:
+### 1. Install Dependencies from the included requirements.txt using a CLI:
 
 `pip install -r requirements.txt`
-* Caution: You can optionally upgrade the modules within the requirements.txt. But be warned that this may cause errors in dependencies throughout the project.
-** `pip install -U -r requirements.txt`
-* If error occurs, rollback to initial requirements:
-** `pip uninstall -r requirements.txt`
-** `pip install -r requirements.txt`
-* To capture the current list of packages installed, especially after including any additional ones that may have been installed and imported for this project:
-** `pip freeze > requirements.txt`
+* Caution: You can optionally upgrade the modules within the requirements.txt. But be warned that this may cause errors in dependencies throughout the project.    
 
-2. Run the included `alpengo_db.py` to initialize a SQLite DB with dummy data
+`pip install -U -r requirements.txt`    
+
+* If error occurs, rollback to initial requirements:    
+
+1. `pip uninstall -r requirements.txt`    
+
+2. `pip install -r requirements.txt`    
+
+* To capture the current list of packages installed, especially after including any additional ones that may have been installed and imported for this project:    
+
+`pip freeze > requirements.txt`
+
+### 2. Run the included `alpengo_db.py` to initialize a SQLite DB with dummy data:
 
 `python alpengo_db.py`
 * This will create an `alpengo_db` file within the same directory as the `alpengo_db.py`, ideally within the same directory as the `alpengo_app.py`.
 
-3. To Be Continued...
+### 3. To Be Continued...
 
 
 Project Tracking Software Link: Trello - https://trello.com/w/akaworkspace5
