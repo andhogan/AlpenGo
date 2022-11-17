@@ -209,7 +209,7 @@ def register():
     form = LogForm()
     if form.validate_on_submit():
         flash('Thank you!', 'success')
-        return redirect(url_for('home'))
+        return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
 
 @app.route('/login', methods=['GET', 'POST'])
