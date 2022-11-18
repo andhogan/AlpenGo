@@ -53,7 +53,7 @@ Ex: `python -m venv alpengo`
 `python alpengo_db.py`
 * This will create an `alpengo_db` file within the same directory as the `alpengo_db.py`, ideally within the same directory as the `alpengo_app.py`.
 
-### 3. To Be Continued...
+### 3. To Be Continued... 
 
 
 Project Tracking Software Link: Trello - https://trello.com/w/akaworkspace5
