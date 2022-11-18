@@ -5,7 +5,7 @@ Team Name: AKA
 Product Name: AlpenGo
 Team Members: Alex Jocius, Katie Sobczak, Andrew Hogan
 
-Weekly Team Meeting: Thursdays at 6pm MDT, 7pm CDT, 8pm EDT
+Weekly Team Meeting: Thursdays at 5:30pm MST, 6:30pm CST, 7:30pm EST
 
 Vision Statement: Encourage hiking through data driven metrics and recommendations.
 
