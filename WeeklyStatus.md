@@ -252,31 +252,31 @@ ___
 
 1. **Weekly Standup**
   * What did you do last week?
-    * AJ- 
+    * AJ- Finished peak and log hike pages.  Researched backend impementation.
     * KS- Created the html templates for the home page, login page, and register page.
-    * AH- 
+    * AH- Worked on backend implementation and updated project documentation (setup instructions, requirements.txt) and general maintanence.
   * What are you doing this week?
-    * AJ- 
-    * KS- 
-    * AH-
+    * AJ- Unit testing for database implementation.
+    * KS- Implement pages with backend data.
+    * AH- Backend implementation.
   * Any obstacles?
-    * AJ- 
+    * AJ- Figuring out bootstrap css and fix page page layout.
     * KS- 
-    * AH- 
+    * AH- Learning and reseaching backend implementation.
     
 2. **Sprint Retrospective**
   * What went well?
-    * AJ-
+    * AJ- Website is looking great and cohesive.
     * KS- Finished the HTML pages and I really like how its all looking so far!
-    * AH-
+    * AH- Great start on backend implementing sqlite database. Good sense of direction moving forward.
   * What didn't work?
-    * AJ-
+    * AJ- Confusion on proper way to implement databse and user acess.
     * KS- Scheduling conflict with the weekly meeting. Sorry guys.
-    * AH-
+    * AH- Ideas on how to connect the final product.
   * How can the team improve?
-    * AJ-
+    * AJ- Communication on ideas.
     * KS- Communication, we are all busy and its hard sometimes.
-    * AH-
+    * AH- Unity in design ideas.
 
 3. **End of Sprint Demo**
    * Overall Effort Level: 
