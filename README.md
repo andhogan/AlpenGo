@@ -5,7 +5,7 @@ Team Name: AKA
 Product Name: AlpenGo
 Team Members: Alex Jocius, Katie Sobczak, Andrew Hogan
 
-Weekly Team Meeting: Thursdays at 6pm MDT, 7pm CDT, 8pm EDT
+Weekly Team Meeting: Thursdays at 5:30pm MST, 6:30pm CST, 7:30pm EST
 
 Vision Statement: Encourage hiking through data driven metrics and recommendations.
 
@@ -53,7 +53,7 @@ Ex: `python -m venv alpengo`
 `python alpengo_db.py`
 * This will create an `alpengo_db` file within the same directory as the `alpengo_db.py`, ideally within the same directory as the `alpengo_app.py`.
 
-### 3. To Be Continued...
+### 3. To Be Continued... 
 
 
 Project Tracking Software Link: Trello - https://trello.com/w/akaworkspace5
