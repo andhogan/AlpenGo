@@ -261,7 +261,7 @@ ___
     * AH- Backend implementation.
   * Any obstacles?
     * AJ- Figuring out bootstrap css and fix page page layout.
-    * KS- 
+    * KS- Learning how to connect the data with front end functionality.
     * AH- Learning and reseaching backend implementation.
     
 2. **Sprint Retrospective**

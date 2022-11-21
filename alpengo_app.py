@@ -1,15 +1,15 @@
 import alpengo_data
 import connexion
 from flask import Flask, render_template, url_for, flash, redirect
-from forms import LogForm
+from forms import LogForm, LoginForm, RegistrationForm
 # Place Holder for form fucntion definitions
 # from forms import 
 
-#app = Flask(__name__)
-app = connexion.App(__name__, specification_dir="./")
-app.add_api("swagger.yml")
+app = Flask(__name__)
+#app = connexion.App(__name__, specification_dir="./")
+#app.add_api("swagger.yml")
 
-#app.config['SECRET_KEY'] = '36e37b21094cafe5ecdfe25318e6e991'
+app.config['SECRET_KEY'] = '36e37b21094cafe5ecdfe25318e6e991'
 
 #############################################################
 # Below is dummy data we can leverage during our development.
@@ -49,12 +49,12 @@ def log():
     form = LogForm()
     if form.validate_on_submit():
         flash('Your hike has been logged!', 'success')
-        return redirect(url_for('home'))
+        return redirect(url_for('achievements'))
     return render_template('log.html', title='Log', form=form)
 
-@app.route('/register')
+@app.route('/register', methods=['GET', 'POST'])
 def register():
-    form = LogForm()
+    form = RegistrationForm()
     if form.validate_on_submit():
         flash('Thank you!', 'success')
         return redirect(url_for('login'))
@@ -62,7 +62,7 @@ def register():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    form = LogForm()
+    form = LoginForm()
     if form.validate_on_submit():
         flash('Welcome!', 'success')
         return redirect(url_for('achievements'))
