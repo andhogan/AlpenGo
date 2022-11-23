@@ -1,0 +1,72 @@
+/* CSS Rules for the AlpenGo App */
+
+/* || GENERAL STYLES */
+
+/* || UTILITIES */
+* {
+    margin: 0.5px;
+    padding: 0.5px;
+    box-sizing: border-box;
+}
+body {
+    font-family: fantasy;
+}
+a {
+    text-decoration: none;
+}
+
+
+/* || SITEWIDE */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 2px solid black;
+}
+
+.button {
+    background-color: rgb(171, 201, 211);
+    color: black;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+/* Login Page */
+
+
+/* Registration Page */
+ .col {
+    width: 50%;
+ }
+
+ .sub_button{
+    background-color: rgb(171, 201, 211);
+    color: black;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 6px;
+ }
+
+/* Home Page */
+.row1 {
+    display: block;
+    text-align: center;
+    margin-bottom: 50px;
+    text-decoration: underline;
+} 
+
+.row2 {
+    display:inline-block;
+    border: dashed 1px black;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.wrap {
+    width:50%;
+ }
+
+/* || APP PAGES */
+
+/* Peak Selection Page */

@@ -1,7 +1,7 @@
 """Run this script with 'python alpengo_db.py' 
 to construct a SQLite DB filled with our dummy data"""
 
-import alpengo_data
+import core.alpengo_data as alpengo_data
 import sqlite3
 import os
 

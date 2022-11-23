@@ -1,0 +1,143 @@
+{% extends "inherit.html" %}
+{% block content %}
+    <main>
+        <div class="container text-center overflow-hidden pt-2">
+            <div class="row h-5 border-bottom pb-3">
+                <div class="col-8">
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>{{ peak.Name }}</h1>
+                        </div>
+                        <div class="col-12 gy-3">
+                            Class {{ peak.Class}}
+                        </div>
+                        <div class="d-grid col-12 mx-auto pt-5 gx-5">
+                            <a class="button" href=" {{ url_for('log') }}" role="button">Log Route</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <img src="static/imgs/peak_imgs/{{ peak.Name }}.JPG" class="float-end w-100" alt="{{ peak.name }}">
+                </div>
+            </div>
+            <div class="row border-bottom py-2">
+                <div class="col text-start">
+                    {{ peak.Description }}
+                </div>
+            </div>
+            <div class="row h-5">
+                <div class="col-8">
+                    <div class="row align-top pt-3 pb-4">
+                        <div class="col">
+                            <h5>Mountain Stats</h5>
+                        </div>
+                    </div>
+                    <div class="row-5">
+                        <div class="col">
+                            <div class="row pb-1">
+                                <div class="col">
+                                    <h6>Start</h6>
+                                </div>
+                                <div class="col">
+                                    <h6>Summit</h6>
+                                </div>
+                                <div class="col">
+                                    <h6>Elevation Gain</h6>
+                                </div>
+                            </div>
+                            <div class="row pb-4">
+                                <div class="col">
+                                    {{ peak.StartElev }}
+                                </div>
+                                <div class="col">
+                                    {{ peak.StartElev }}
+                                </div>
+                                <div class="col">
+                                    {{ peak.SummitElev }}
+                                </div>
+                            </div>
+                            <div class="row pb-1">
+                                <div class="col">
+                                    <h6>Length</h6>
+                                </div>
+                                <div class="col">
+                                    <h6>Av. Time</h6>
+                                </div>
+                                <div class="col">
+                                    <h6>Route Type</h6>
+                                </div>
+                            </div>
+                            <div class="row pb-4 border-bottom">
+                                <div class="col">
+                                    {{ peak.Length }}
+                                </div>
+                                <div class="col">
+                                    {{ peak.Avtime }}
+                                </div>
+                                <div class="col">
+                                    {{ peak.RouteType }}
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                    <div class="row align-top pt-3 pb-4">
+                        <div class="col">
+                            <h5>My Stats</h5>
+                        </div>
+                    </div>
+                    <div class="row h-5">
+                        <div class="col">
+                            <div class="row pb-1">
+                                <div class="col">
+                                    <h6>Date</h6>
+                                </div>
+                                <div class="col">
+                                    <h6>Start Time</h6>
+                                </div>
+                                <div class="col">
+                                    <h6>End Time</h6>
+                                </div>
+                            </div>
+                            <div class="row pb-4">
+                                <div class="col">
+                                    {{ userpeak.Date }}
+                                </div>
+                                <div class="col">
+                                    {{ userpeak.StartTime }}
+                                </div>
+                                <div class="col">
+                                    {{ userpeak.EndTime}}
+                                </div>
+                            </div>
+                            <div class="row pb-1">
+                                <div class="col">
+                                    <h6>Miles</h6>
+                                </div>
+                                <div class="col">
+                                    <h6>Av. HR</h6>
+                                </div>
+                                <div class="col">
+                                    <h6>Steps</h6>
+                                </div>
+                            </div>
+                            <div class="row pb-4">
+                                <div class="col">
+                                    {{ userpeak.Miles }}
+                                </div>
+                                <div class="col">
+                                    {{ userpeak.AvHr }}
+                                </div>
+                                <div class="col">
+                                    {{ userpeak.Steps }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+                <div class="col-4 gy-3">
+                    <img src="static/imgs/map_imgs/{{ peak.Name }} Topo.JPG" class="img-fluid  w-100 h-100" alt="{{ peak.name }}">
+                </div>
+            </div> 
+        </div>
+    </main>
+{% endblock content %}
