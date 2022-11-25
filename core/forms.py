@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, DateField, TimeField, DecimalField, IntegerField, SubmitField
+from wtforms import StringField, PasswordField, DateField, TimeField, DecimalField, IntegerField, SubmitField
 from wtforms.validators import DataRequired, Length, Email
-
+from wtforms.widgets import PasswordInput
 
 class LogForm(FlaskForm):
     date = DateField('Date', format='%Y-%m-%d', validators={DataRequired()})
@@ -13,8 +13,8 @@ class LogForm(FlaskForm):
     submit = SubmitField('Log Hike')
 
 class LoginForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired()])
-    password = StringField('Password', validators=[DataRequired()])
+    username = StringField('Username', validators=[DataRequired()], render_kw={"placeholder": "Enter Username"})
+    password = PasswordField('Password', validators=[DataRequired()], render_kw={"placeholder": "Enter Password"}, widget=PasswordInput(hide_value=False))
     submit = SubmitField('Login')
 
 class RegistrationForm(FlaskForm):

@@ -1,4 +1,4 @@
-from flask import render_template, url_for, flash, redirect
+from flask import render_template, url_for, flash, redirect, request
 from core import app
 from core.forms import LogForm, LoginForm, RegistrationForm
 from core import alpengo_data
@@ -49,10 +49,20 @@ def register():
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        flash('Welcome!', 'success')
-        return redirect(url_for('achievements'))
-    return render_template('login.html', title='Login', form=form)
+        for user in alpengo_data.Users:
+            if user['UserName'] == form.username.data and user['Password'] == form.password.data:
+                userID = user['UserID']
+                flash('Welcome!', 'success')
+                return redirect(url_for('achievements',userID=userID))
+    return render_template('login.html', title='Login', form=form, users=alpengo_data.Users)
 
 @app.route('/achievements')
 def achievements():
-    return render_template('achievements.html', title='Achievements')
+    userID = request.args.get('userID', None)
+    achieveID=None
+    achieve_list=[]
+    for achieves in alpengo_data.UserAchievement:
+        if achieves['UserID'] == userID:
+            achieveID=achieves['AchievementID']
+            achieve_list.append(achieveID)
+    return render_template('achievements.html', achieve_list=achieve_list, title='Achievements', achieve=alpengo_data.Achievements)

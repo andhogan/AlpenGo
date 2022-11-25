@@ -1,6 +1,40 @@
 {% extends "inherit.html" %}
 {% block content %}
-    <div>
-        <p>I am the Achievments Page!</p>
+<style>
+    .row {
+        padding-left: 0 !important;
+        padding-top: 0.5rem !important;
+        margin-left: 0 !important;
+        padding-bottom: 0.5rem !important;
+        border-bottom: 0.1rem solid grey;
+        border-left: 0 !important;
+    }
+</style>
+
+<main>
+    <div class="container text-center">
+        <div class="row" style="background-color: rgba(171, 201, 211, .6); height: 3rem;">
+            <div class="col-5 my-auto">
+                Achievement Name
+            </div>
+            <div class="col-5 my-auto">
+                Achievement Description
+            </div>
+        </div>
+            <div class="row" style="height: 15rem">
+                {% for a in achieve_list %}
+                    {% for ach in Achievements %}
+                        {% if a == ach.AchievementID %}
+                        <div class="col-5 my-auto">
+                            {{ ach.Achievement }}
+                        </div>
+                        <div class="col-5 my-auto">
+                            {{ ach.Description }}
+                        </div>
+                {% endif %}
+                    {% endfor %}
+                     {% endfor %}
+             </div>
     </div>
+</main>
 {% endblock content %}

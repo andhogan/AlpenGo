@@ -103,8 +103,8 @@ Achievements = [{
     'Achievement': 'Weekend Warrior',
     'Description': "You have logged tons of miles on the weekend!"},
     {'AchievementID': 3,
-    'Achievement': 'Weekend Warrior',
-    'Description': "You have logged tons of miles on the weekend!"}
+    'Achievement': 'Five Peaks Down',
+    'Description': "You have logged hikes on five different peaks!"}
 ]
 
 UserPeaks = [{
