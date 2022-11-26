@@ -1,5 +1,5 @@
 from core import db
-from werkzeug.security import generate_password_hash, check_password_hash
+from flask_login import UserMixin
 
 user_achievement = db.Table('userAchievement', 
     db.Column('userID', db.Integer, db.ForeignKey('user.userID')),
@@ -17,8 +17,8 @@ user_peak = db.Table('userPeak',
     db.Column('steps', db.Integer, nullable=False),
 )
 
-class User(db.Model):
-    userID = db.Column(db.Integer, primary_key=True)
+class User(UserMixin, db.Model):
+    userID = db.Column(db.Integer, primary_key=True, autoincrement=True)
     firstName = db.Column(db.String(20), nullable=False)
     lastName = db.Column(db.String(20), nullable=False)
     userName = db.Column(db.String(20), unique=True, nullable=False)
@@ -26,13 +26,6 @@ class User(db.Model):
     password = db.Column(db.String(60), nullable=False)
     achievements = db.relationship("Achievement", secondary=user_achievement, backref='user', lazy=True)
     peaks = db.relationship("Peak", secondary=user_peak, backref = 'peak', lazy=True)
-
-    def set_password(self, password):
-        self.password = generate_password_hash(password, method= 'sha256')
-    
-    def check_password (self, password):
-        return check_password_hash(self.password, password)
-
 
     def __repr__(self):
         return f"User('{self.firstName}', '{self.lastName}', '{self.userName}', '{self.emailAddress}')"

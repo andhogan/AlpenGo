@@ -1,15 +1,11 @@
-from flask import render_template, url_for, flash, redirect, request
-from core import app
-from core.forms import LogForm, LoginForm, RegistrationForm
+from flask import render_template, url_for, flash, redirect, Blueprint
+from flask_login import login_required, current_user
+from core import app, db
+from core.forms import LogForm
 from core import alpengo_data
-from flask_login import LoginManager
 from core.models import User
 
-login_manager = LoginManager(app)
-#set up loading user
-@login_manager.user_loader
-def load_user(user_id):
-    return User.userID
+routes = Blueprint('routes', __name__)
 
 @app.route('/')
 def home():
@@ -44,28 +40,9 @@ def log():
     print(form.errors)
     return render_template('log.html', title='Log', form=form)
 
-@app.route('/register', methods=['GET', 'POST'])
-def register():
-    form = RegistrationForm()
-    if form.validate_on_submit():
-        flash('Thank you!', 'success')
-        return redirect(url_for('login'))
-    return render_template('register.html', title='Register', form=form)
-
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    form = LoginForm()
-    if form.validate_on_submit():
-        for user in alpengo_data.Users:
-            if user['UserName'] == form.username.data and user['Password'] == form.password.data:
-                userID = user['UserID']
-                flash('Welcome!', 'success')
-                return redirect(url_for('achievements',userID=userID))
-    return render_template('login.html', title='Login', form=form, users=alpengo_data.Users)
-
 @app.route('/achievements')
-def achievements():
-    userID = 2
+@login_required
+def achievements(userID):
     achieveID=None
     achieve_list=[]
     for achieves in alpengo_data.UserAchievement:
@@ -78,4 +55,4 @@ def achievements():
             if (a == achievement['AchievementID']):
                 print(achievement)
                 retList.append(achievement)
-    return render_template('achievements.html', achieve_list=retList, title='Achievements')
+    return render_template('achievements.html', achieve_list=retList, title='Achievements', userID=current_user)
