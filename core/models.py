@@ -1,5 +1,5 @@
 from core import db
-
+from werkzeug.security import generate_password_hash, check_password_hash
 
 user_achievement = db.Table('userAchievement', 
     db.Column('userID', db.Integer, db.ForeignKey('user.userID')),
@@ -27,8 +27,15 @@ class User(db.Model):
     achievements = db.relationship("Achievement", secondary=user_achievement, backref='user', lazy=True)
     peaks = db.relationship("Peak", secondary=user_peak, backref = 'peak', lazy=True)
 
+    def set_password(self, password):
+        self.password = generate_password_hash(password, method= 'sha256')
+    
+    def check_password (self, password):
+        return check_password_hash(self.password, password)
+
+
     def __repr__(self):
-        return f"User('{self.firstName}', '{self.lastName}', '{self.userName}', '{self.email}')"
+        return f"User('{self.firstName}', '{self.lastName}', '{self.userName}', '{self.emailAddress}')"
 
 class Peak(db.Model):
     peakID = db.Column(db.Integer, primary_key=True)
@@ -52,4 +59,4 @@ class Achievement(db.Model):
     description = db.Column(db.String(250), nullable=False)
 
     def __repr__(self):
-        return f"Peak('{self.achievment}', '{self.description}')"
+        return f"Peak('{self.achievement}', '{self.description}')"
