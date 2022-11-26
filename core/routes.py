@@ -58,11 +58,17 @@ def login():
 
 @app.route('/achievements')
 def achievements():
-    userID = request.args.get('userID', None)
+    userID = 2
     achieveID=None
     achieve_list=[]
     for achieves in alpengo_data.UserAchievement:
         if achieves['UserID'] == userID:
             achieveID=achieves['AchievementID']
             achieve_list.append(achieveID)
-    return render_template('achievements.html', achieve_list=achieve_list, title='Achievements', achieve=alpengo_data.Achievements)
+    retList = []
+    for a in achieve_list:
+        for achievement in alpengo_data.Achievements:
+            if (a == achievement['AchievementID']):
+                print(achievement)
+                retList.append(achievement)
+    return render_template('achievements.html', achieve_list=retList, title='Achievements')

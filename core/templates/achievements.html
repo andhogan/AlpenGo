@@ -21,20 +21,16 @@
                 Achievement Description
             </div>
         </div>
-            <div class="row" style="height: 15rem">
-                {% for a in achieve_list %}
-                    {% for ach in Achievements %}
-                        {% if a == ach.AchievementID %}
-                        <div class="col-5 my-auto">
-                            {{ ach.Achievement }}
-                        </div>
-                        <div class="col-5 my-auto">
-                            {{ ach.Description }}
-                        </div>
-                {% endif %}
-                    {% endfor %}
-                     {% endfor %}
-             </div>
+        <div class="row" style="height: 15rem">
+            {% for a in achieve_list %}
+                <div class="col-5 my-auto">
+                    <p>{{ a.Achievement }}</p>
+                </div>
+                <div class="col-5 my-auto">
+                    <p>{{ a.Description }}</p>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 </main>
 {% endblock content %}
