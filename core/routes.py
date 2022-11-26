@@ -2,7 +2,14 @@ from flask import render_template, url_for, flash, redirect, request
 from core import app
 from core.forms import LogForm, LoginForm, RegistrationForm
 from core import alpengo_data
-#from core.models import peaks, etc...
+from flask_login import LoginManager
+from core.models import User
+
+login_manager = LoginManager(app)
+#set up loading user
+@login_manager.user_loader
+def load_user(user_id):
+    return User.userID
 
 @app.route('/')
 def home():
