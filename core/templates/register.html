@@ -9,47 +9,50 @@
               class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
               alt="registration photo">
             <div class="card-body p-4 p-md-5">
-              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Sign Up, Get Hiking!</h3>
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 mx-auto">Sign Up, Get Hiking!</h3>
   
-              <form class="px-md-2">
-                <div class="row">
-                    <div class="col">
-                    <input type="text" id="reg1" class="form-control" />
-                    <label class="form-label" for="reg1">First Name</label>
+              <form method="POST" action="" novalidate>
+                {{ form.hidden_tag() }}
+                <div class="row form-group">
+                    <div class="col-5 mx-auto">
+                      {{ form.firstname(class="form-control") }}
+                      {{ form.firstname.label(class="form-control-label")}}
+                      {% if form.username.errors %}
+                        {{ form.username(class="form-control is-invalid") }}
+                          {% for error in form.username.errors %}
+                            <div class="invalid-feedback">
+                              <span>{{ error }}</span>
+                            </div>
+                          {% endfor %}
+                      {% else %}
+                            {{ form.username(class="form-control") }}
+                      {% endif %}
+                      {{ form.username.label(class="form-control-label")}}
+                      {% if form.email.errors %}
+                        {{ form.email(class="form-control is-invalid") }}
+                          {% for error in form.email.errors %}
+                            <div class="invalid-feedback">
+                              <span>{{ error }}</span>
+                            </div>
+                          {% endfor %}
+                      {% else %}
+                            {{ form.email(class="form-control") }}
+                      {% endif %}
+                      {{ form.email.label(class="form-control-label")}}
                     </div>
-                    <div class="col">
-                    <input type="text" id="reg1" class="form-control" />
-                    <label class="form-label" for="reg1">Last Name</label>
+                    <div class="col-5 mx-auto">
+                      {{ form.lastname(class="form-control") }}
+                      {{ form.lastname.label(class="form-control-label")}}
+                      {{ form.password(class="form-control") }}
+                      {{ form.password.label(class="form-control-label")}}
+                      {{ form.city_state(class="form-control") }}
+                      {{ form.city_state.label(class="form-control-label")}}
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col">
-                    <input type="text" id="reg1" class="form-control" />
-                    <label class="form-label" for="reg1">Username</label>
-                    </div>
-                    <div class="col">
-                    <input type="text" id="reg1" class="form-control" />
-                    <label class="form-label" for="reg1">Password</label>
-                    </div>
+                <div class="form-group">
+                  {{ form.submit(class="btn-outline-info") }}
                 </div>
-                <div class="row">
-                    <div class="col">
-                    <input type="text" id="reg1" class="form-control" />
-                    <label class="form-label" for="reg1">Email</label>
-                    </div>
-                    <div class="col">
-                    <input type="text" id="reg1" class="form-control" />
-                    <label class="form-label" for="reg1">City, State</label>
-                    </div>
-                </div>
-  
-                <div class="text-center text-lg-start mt-4 pt-2">
-                    <a class="button" 
-                      style="padding-left: 2.5rem; padding-right: 2.5rem;" role="button" href=" {{ url_for('login') }}">Submit</a>
-                  </div>
-
               </form>
-  
             </div>
           </div>
         </div>

@@ -28,7 +28,7 @@ class User(db.Model):
     peaks = db.relationship("Peak", secondary=user_peak, backref = 'peak', lazy=True)
 
     def __repr__(self):
-        return f"User('{self.firstName}', '{self.lastName}', '{self.userName}', '{self.email}')"
+        return f"User('{self.firstName}', '{self.lastName}', '{self.userName}', '{self.emailAddress}')"
 
 class Peak(db.Model):
     peakID = db.Column(db.Integer, primary_key=True)

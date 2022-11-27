@@ -1,8 +1,8 @@
 from flask import render_template, url_for, flash, redirect, request
-from core import app
+from core import app, db, bcrypt
 from core.forms import LogForm, LoginForm, RegistrationForm
 from core import alpengo_data
-#from core.models import peaks, etc...
+from core.models import user_achievement, user_peak, User, Peak, Achievement
 
 @app.route('/')
 def home():
@@ -41,7 +41,11 @@ def log():
 def register():
     form = RegistrationForm()
     if form.validate_on_submit():
-        flash('Thank you!', 'success')
+        password_hashed = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
+        user = User(firstName=form.firstname.data, lastName=form.lastname.data, userName=form.username.data, emailAddress=form.email.data, password=password_hashed)
+        db.session.add(user)
+        db.session.commit()
+        flash('Thank you! Your account has been registered.', 'success')
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
 
