@@ -3,7 +3,7 @@ from core import app, db, bcrypt
 from core.forms import LogForm, LoginForm, RegistrationForm
 from core import alpengo_data
 from core.models import user_achievement, user_peak, User, Peak, Achievement
-from flask_login import login_user, current_user
+from flask_login import login_user, current_user, login_required
 
 @app.route('/')
 def home():
