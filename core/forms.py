@@ -1,7 +1,9 @@
 from flask_wtf import FlaskForm
+from core import db
 from wtforms import StringField, PasswordField, DateField, TimeField, DecimalField, IntegerField, SubmitField
-from wtforms.validators import DataRequired, Length, Email
+from wtforms.validators import DataRequired, Length, Email, ValidationError
 from wtforms.widgets import PasswordInput
+from core.models import User
 
 class LogForm(FlaskForm):
     date = DateField('Date', format='%Y-%m-%d', validators={DataRequired()})
@@ -25,3 +27,14 @@ class RegistrationForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired()])
     city_state= StringField('City, State', validators=[DataRequired()])
     submit = SubmitField('Register')
+
+    def validate_username(self, username):
+        print('hello')
+        user = db.session.execute(db.select(User).filter_by(userName=username.data)).first()
+        if user:
+            raise ValidationError('User already exists.')
+
+    def validate_email(self, email):
+        email = db.session.execute(db.select(User).filter_by(emailAddress=email.data)).first()
+        if email:
+            raise ValidationError('Email is already registered.')

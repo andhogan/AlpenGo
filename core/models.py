@@ -1,5 +1,9 @@
-from core import db
+from core import db, login_manager
 from flask_login import UserMixin
+
+@login_manager.user_loader
+def load_user(user_id):
+    return db.get_or_404(User, int(user_id))
 
 user_achievement = db.Table('userAchievement', 
     db.Column('userID', db.Integer, db.ForeignKey('user.userID')),
@@ -17,8 +21,8 @@ user_peak = db.Table('userPeak',
     db.Column('steps', db.Integer, nullable=False),
 )
 
-class User(UserMixin, db.Model):
-    userID = db.Column(db.Integer, primary_key=True, autoincrement=True)
+class User(db.Model, UserMixin):
+    userID = db.Column(db.Integer, primary_key=True)
     firstName = db.Column(db.String(20), nullable=False)
     lastName = db.Column(db.String(20), nullable=False)
     userName = db.Column(db.String(20), unique=True, nullable=False)
@@ -27,8 +31,11 @@ class User(UserMixin, db.Model):
     achievements = db.relationship("Achievement", secondary=user_achievement, backref='user', lazy=True)
     peaks = db.relationship("Peak", secondary=user_peak, backref = 'peak', lazy=True)
 
+    def get_id(self):
+        return (str(self.userID))
+
     def __repr__(self):
-        return f"User('{self.firstName}', '{self.lastName}', '{self.userName}', '{self.emailAddress}')"
+        return f"User('{self.userID}', '{self.firstName}', '{self.lastName}', '{self.userName}', '{self.emailAddress}', '{self.password}')"
 
 class Peak(db.Model):
     peakID = db.Column(db.Integer, primary_key=True)
@@ -44,7 +51,9 @@ class Peak(db.Model):
 
 
     def __repr__(self):
-        return f"Peak('{self.name}', '{self.startElevation}', '{self.summitElevation}', '{self.description}')"
+        return f"Peak('{self.peakID}', '{self.name}', '{self.startElevation}', '{self.summitElevation}', '{self.elevationGain}', '{self.length}', '{self.avTime}', \
+                '{self.routeType}', '{self.peakClass}', '{self.description}')"
+                
 
 class Achievement(db.Model):
     achievementID = db.Column(db.Integer, primary_key=True)
@@ -52,4 +61,4 @@ class Achievement(db.Model):
     description = db.Column(db.String(250), nullable=False)
 
     def __repr__(self):
-        return f"Peak('{self.achievement}', '{self.description}')"
+        return f"Peak('{self.achievementID}', '{self.achievment}', '{self.description}')"
