@@ -3,6 +3,7 @@ from core import app, db, bcrypt
 from core.forms import LogForm, LoginForm, RegistrationForm
 from core import alpengo_data
 from core.models import user_achievement, user_peak, User, Peak, Achievement
+from flask_login import login_user, current_user
 
 @app.route('/')
 def home():
@@ -53,12 +54,15 @@ def register():
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        for user in alpengo_data.Users:
-            if user['UserName'] == form.username.data and user['Password'] == form.password.data:
-                userID = user['UserID']
-                flash('Welcome!', 'success')
-                return redirect(url_for('achievements',userID=userID))
-    return render_template('login.html', title='Login', form=form, users=alpengo_data.Users)
+        user = db.session.execute(db.select(User).filter_by(userName=form.username.data)).scalar()
+        print(user)
+        if (user and bcrypt.check_password_hash(user.password, form.password.data)):
+            login_user(user)
+            return redirect(url_for('achievements',userID=user.userID))
+        else:
+            flash('Login failed.  Please try again.')
+    return render_template('login.html', title='Login', form=form)
+
 
 @app.route('/achievements')
 def achievements():
