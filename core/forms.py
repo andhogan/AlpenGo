@@ -29,7 +29,6 @@ class RegistrationForm(FlaskForm):
     submit = SubmitField('Register')
 
     def validate_username(self, username):
-        print('hello')
         user = db.session.execute(db.select(User).filter_by(userName=username.data)).first()
         if user:
             raise ValidationError('User already exists.')
