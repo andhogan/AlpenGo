@@ -3,7 +3,8 @@ from core import app, db, bcrypt
 from core.forms import LogForm, LoginForm, RegistrationForm
 from core import alpengo_data
 from core.models import user_achievement, user_peak, User, Peak, Achievement
-from flask_login import login_user, current_user, login_required
+from flask_login import login_user, current_user, login_required, logout_user
+
 
 # Home Page of the application.
 @app.route('/')
@@ -102,7 +103,8 @@ def logout():
 # Achievments Page highlighting a user's achievements as determined by the logged data.
 @app.route('/achievements')
 @login_required
-def achievements(userID):
+def achievements():
+    userID = 2
     achieveID=None
     achieve_list=[]
     for achieves in alpengo_data.UserAchievement:
@@ -114,4 +116,4 @@ def achievements(userID):
         for achievement in alpengo_data.Achievements:
             if (a == achievement['AchievementID']):
                 retList.append(achievement)
-    return render_template('achievements.html', achieve_list=retList, title='Achievements', userID=current_user)
+    return render_template('achievements.html', achieve_list=retList, title='Achievements')
