@@ -53,13 +53,15 @@ def log(peak):
         user_ID = current_user.userID
     peak_select = db.session.execute(db.select(Peak).filter_by(name=peak)).scalar()
     peak_ID = peak_select.peakID
-    form = LogForm()
+    form = LogForm(request.form)
     if form.validate_on_submit():
-        userPeak = user_peak(userID=user_ID, peakID=peak_ID, date=form.date.data, startTime=form.startTime.data, endTime=form.endTime.data, miles=form.miles.data, avHR=form.avHR.data, steps=form.steps.data)
-        db.session.add(userPeak)
-        db.session.commit()
+        #userPeak = user_peak(userID=user_ID, peakID=peak_ID, date=form.date.data, startTime=form.startTime.data, endTime=form.endTime.data, miles=form.miles.data, avHR=form.avHR.data, steps=form.steps.data)
+        #db.session.add(userPeak)
+        #db.session.commit()
+        userPeak = user_peak
+        form.populate_obj(userPeak)
         flash('Your hike has been logged!', 'success')
-        return redirect(url_for('achievements'))
+        return redirect(url_for('peakpage', peak=peak))
     return render_template('log.html', title='Log', form=form)
 
 
