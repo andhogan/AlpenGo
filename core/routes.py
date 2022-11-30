@@ -50,13 +50,13 @@ def peakpage(peak):
 @login_required
 def log(peak):
     if current_user.is_authenticated:
-        userID = current_user.userID
+        user_ID = current_user.userID
     peak_select = db.session.execute(db.select(Peak).filter_by(name=peak)).scalar()
-    peakID = peak_select.peakID
+    peak_ID = peak_select.peakID
     form = LogForm()
     if form.validate_on_submit():
-        user_peak = user_peak(userID=userID, peakID=peakID, date=form.date.data, startTime=form.startTime.data, endtime=form.endTime.data, miles=form.miles.data, avHR=form.avHR.data, )
-        db.session.add(user_peak)
+        userPeak = user_peak(userID=user_ID, peakID=peak_ID, date=form.date.data, startTime=form.startTime.data, endTime=form.endTime.data, miles=form.miles.data, avHR=form.avHR.data, steps=form.steps.data)
+        db.session.add(userPeak)
         db.session.commit()
         flash('Your hike has been logged!', 'success')
         return redirect(url_for('achievements'))
@@ -104,7 +104,7 @@ def logout():
 @app.route('/achievements')
 @login_required
 def achievements():
-    userID = 2
+    userID = current_user.userID
     achieveID=None
     achieve_list=[]
     for achieves in alpengo_data.UserAchievement:

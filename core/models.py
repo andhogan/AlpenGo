@@ -11,7 +11,7 @@ def load_user(user_id):
 
 user_achievement = db.Table('userAchievement', 
     db.Column('userID', db.Integer, db.ForeignKey('user.userID')),
-    db.Column('achievementID', db.Integer, db.ForeignKey('achievement.achievementID'))
+    db.Column('achievementID', db.Integer, db.ForeignKey('achievement.achievementID')),
     )
 
 user_peak = db.Table('userPeak', 
@@ -65,4 +65,4 @@ class Achievement(db.Model):
     description = db.Column(db.String(250), nullable=False)
 
     def __repr__(self):
-        return f"Peak('{self.achievementID}', '{self.achievment}', '{self.description}')"
+        return f"Achievement('{self.achievementID}', '{self.achievement}', '{self.description}')"
