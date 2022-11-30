@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from core import app, db
+from core import db
 from core.models import *
 
 #####################################################################################
@@ -140,3 +140,6 @@ def delPeaks():
     db.session.query(Peak).delete()
     db.commit()
     return True
+
+
+#Add dummy data Users to db

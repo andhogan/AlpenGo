@@ -143,10 +143,10 @@ for insert_string in insert_string_list:
 # UserPeaks
 
 insert_string_list= []
-for user_peak in alpengo_data.UserPeaks:
+for userpeak in alpengo_data.UserPeaks:
     insert_string = ""
-    for key in user_peak.keys():
-        insert_string = insert_string+", "+"'"+str(user_peak[key])+"'"
+    for key in userpeak.keys():
+        insert_string = insert_string+", "+"'"+str(userpeak[key])+"'"
     #print(insert_string.lstrip(", "))
     insert_string_list.append(insert_string.lstrip(", "))
     
