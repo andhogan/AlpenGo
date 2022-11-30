@@ -4,7 +4,10 @@ from flask_login import UserMixin
 
 @login_manager.user_loader
 def load_user(user_id):
-    return (User, int(user_id))
+    try:
+        return User.query.get(user_id)
+    except:
+        return None
 
 user_achievement = db.Table('userAchievement', 
     db.Column('userID', db.Integer, db.ForeignKey('user.userID')),
