@@ -9,21 +9,6 @@ def load_user(user_id):
     except:
         return None
 
-user_achievement = db.Table('userAchievement', 
-    db.Column('userID', db.Integer, db.ForeignKey('user.userID'), primary_key=True),
-    db.Column('achievementID', db.Integer, db.ForeignKey('achievement.achievementID'), primary_key=True),
-    )
-
-user_peak = db.Table('userPeak', 
-    db.Column('userID', db.Integer, db.ForeignKey('user.userID'), primary_key=True),
-    db.Column('peakID', db.Integer, db.ForeignKey('peak.peakID'), primary_key=True),
-    db.Column('date', db.Date, nullable=False),
-    db.Column('startTime', db.Time, nullable=False),
-    db.Column('endTime', db.Time, nullable=False),
-    db.Column('miles', db.Float, nullable=False),
-    db.Column('avHR', db.Integer, nullable=False),
-    db.Column('steps', db.Integer, nullable=False),
-)
 
 class User(db.Model, UserMixin):
     userID = db.Column(db.Integer, primary_key=True)
@@ -60,8 +45,31 @@ class Achievement(db.Model):
     achievementID = db.Column(db.Integer, primary_key=True)
     achievement = db.Column(db.String(120), unique=True, nullable=False)
     description = db.Column(db.String(250), nullable=False)
-    #user_a = db.relationship("user", secondary=user_achievement, backref='achievements', lazy=True)
 
 
     def __repr__(self):
         return f"Achievement('{self.achievementID}', '{self.achievement}', '{self.description}')"
+
+class userPeak(db.Model):
+    userPeakID = db.Column(db.Integer, primary_key=True)
+    userID = db.Column(db.Integer, nullable=False)
+    peakID = db.Column(db.Integer, nullable=False)
+    date = db.Column(db.Date, nullable=False)
+    startTime = db.Column(db.Time, nullable=False)
+    endTime = db.Column(db.Time, nullable=False)
+    miles = db.Column(db.Float, nullable=False)
+    avHR = db.Column(db.Integer, nullable=False)
+    steps = db.Column(db.Integer, nullable=False)
+
+    def __repr__(self):
+        return f"userPeak('{self.userID}', '{self.peakID}', '{self.date}', '{self.startTime}', '{self.endTime}', '{self.miles}', '{self.avHR}', \
+                '{self.steps}')"
+
+
+class userAchievement(db.Model):
+    userAchievementID = db.Column(db.Integer, primary_key=True)
+    userID = db.Column(db.Integer, nullable=False)
+    achievementID = db.Column(db.Integer, nullable=False)
+
+    def __repr__(self):
+        return f"userAchievement('{self.userID}', '{self.achievementID}')"

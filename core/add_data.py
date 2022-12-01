@@ -114,6 +114,25 @@ Peaks = [{
 #####################################################################################
 
 
+Achievements = [{
+    'achievementID': 1,
+    'achievement': 'First Hike',
+    'description': 'Congratulations on your very first hike!'},
+    {'achievementID': 2,
+    'achievement': 'Half Way There',
+    'description': "You're halfway to completing all the peaks on AlpenGo!"},
+    {'achievementID': 3,
+    'achievement': 'Long Trek',
+    'description': "You just logged a hike over 10 miles!"},
+    {'achievementID': 3,
+    'achievement': 'Century Steps',
+    'description': "You've logged over 100,000 steps!"},
+]
+
+#####################################################################################
+#####################################################################################
+
+
 ####################################################################################
 #########################Helper functions for Db Operations#########################
 ####################################################################################
@@ -134,6 +153,21 @@ def addPeaks():
     print("done")
 
     return True
+
+
+# Add all achievments from the Achievements list to the Db if not currently stored in Db
+def addAchievements():
+    for a in Achievements:
+        achieve_db = db.session.execute(db.select(Achievement).filter_by(achievement=a['achievement'])).scalar()
+        if not achieve_db:
+            new_achieve = Achievement(achievement=a['achievement'], description=a['description'])
+            db.session.add(new_achieve)
+            db.session.commit()
+
+    print("done")
+
+    return True
+
 
 # Delete all peaks from the Peak table within the Db
 def delPeaks():

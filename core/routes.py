@@ -2,7 +2,7 @@ from flask import render_template, url_for, flash, redirect, request
 from core import app, db, bcrypt
 from core.forms import LogForm, LoginForm, RegistrationForm
 from core import alpengo_data
-from core.models import user_achievement, user_peak, User, Peak, Achievement
+from core.models import userAchievement, userPeak, User, Peak, Achievement
 from flask_login import login_user, current_user, login_required, logout_user
 
 
@@ -27,7 +27,7 @@ def peakselection():
         userID = None
     peaks = db.session.execute(db.select(Peak)).scalars()
     if userID:
-        user_peaks = db.session.execute(db.select(user_peak).filter_by(userID=userID)).scalars()
+        user_peaks = db.session.execute(db.select(userPeak.peakID).filter_by(userID=userID)).scalars()
     else:
         user_peaks = None
     return render_template('peakselection.html', title='Peaks', peaks=peaks, user_peaks=user_peaks)
@@ -39,9 +39,11 @@ def peakselection():
 def peakpage(peak):
     if current_user.is_authenticated:
         userID = current_user.userID
+    else:
+        userID = None
     peak_select = db.session.execute(db.select(Peak).filter_by(name=peak)).scalar()
     peakID = peak_select.peakID
-    user_peaks = db.session.execute(db.select(user_peak).filter_by(userID=userID, peakID=peakID)).scalar()
+    user_peaks = db.session.execute(db.select(userPeak).filter_by(userID=userID, peakID=peakID)).scalar()
     return render_template('peak.html', title=f'{peak}', peak=peak_select, userpeak=user_peaks)
 
 
@@ -51,15 +53,32 @@ def peakpage(peak):
 def log(peak):
     if current_user.is_authenticated:
         user_ID = current_user.userID
+    else:
+        user_ID = None
     peak_select = db.session.execute(db.select(Peak).filter_by(name=peak)).scalar()
     peak_ID = peak_select.peakID
     form = LogForm(request.form)
     if form.validate_on_submit():
-        #userPeak = user_peak(userID=user_ID, peakID=peak_ID, date=form.date.data, startTime=form.startTime.data, endTime=form.endTime.data, miles=form.miles.data, avHR=form.avHR.data, steps=form.steps.data)
-        #db.session.add(userPeak)
-        #db.session.commit()
-        userPeak = user_peak
-        form.populate_obj(userPeak)
+        userData = userPeak(userID=user_ID, peakID=peak_ID, date=form.date.data, startTime=form.startTime.data, endTime=form.endTime.data, miles=form.miles.data, avHR=form.avHR.data, steps=form.steps.data)
+        db.session.add(userData)
+
+        # if float(form.miles) > 10.00:
+        #     userFirst = userAchievement(userID=user_ID, achievementID=1)
+        #     db.session.add(userFirst)
+
+        numHikes = db.session.query(userPeak).filter_by(userID=user_ID, peakID=peak_ID).count()
+        if numHikes > 0:
+            userFirst = userAchievement(userID=user_ID, achievementID=1)
+            db.session.add(userFirst)
+        if numHikes == 5:
+            userFirst = userAchievement(userID=user_ID, achievementID=2)
+            db.session.add(userFirst)
+
+        # numSteps = db.session.query(userPeak.steps).filter_by(userID=user_ID, peakID=peak_ID).sum()
+        # if numSteps > 100000:
+        #     userFirst = userAchievement(userID=user_ID, achievementID=2)
+        #     db.session.add(userFirst)
+        db.session.commit()
         flash('Your hike has been logged!', 'success')
         return redirect(url_for('peakpage', peak=peak))
     return render_template('log.html', title='Log', form=form)
@@ -106,16 +125,13 @@ def logout():
 @app.route('/achievements')
 @login_required
 def achievements():
-    userID = current_user.userID
-    achieveID=None
-    achieve_list=[]
-    for achieves in alpengo_data.UserAchievement:
-        if achieves['UserID'] == userID:
-            achieveID=achieves['AchievementID']
-            achieve_list.append(achieveID)
-    retList = []
-    for a in achieve_list:
-        for achievement in alpengo_data.Achievements:
-            if (a == achievement['AchievementID']):
-                retList.append(achievement)
-    return render_template('achievements.html', achieve_list=retList, title='Achievements')
+    if current_user.is_authenticated:
+        user_ID = current_user.userID
+    else:
+        user_ID = None
+    user_achievements = db.session.execute(db.select(userAchievement.achievementID).filter_by(userID=user_ID)).scalars().all()
+    if user_achievements:
+        achievements = [db.session.query(Achievement).filter_by(achievementID=id).scalar() for id in user_achievements]
+    else: 
+        achievements = None
+    return render_template('achievements.html', achieve_list=achievements, title='Achievements')

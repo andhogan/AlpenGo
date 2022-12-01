@@ -22,14 +22,16 @@
             </div>
         </div>
         <div class="row" style="height: 15rem">
+        {% if achieve_list %}
             {% for a in achieve_list %}
                 <div class="col-5 my-auto">
-                    <p>{{ a.Achievement }}</p>
+                    <p>{{ a.achievement }}</p>
                 </div>
                 <div class="col-5 my-auto">
-                    <p>{{ a.Description }}</p>
+                    <p>{{ a.description }}</p>
                 </div>
             {% endfor %}
+        {% endif %}
         </div>
     </div>
 </main>
