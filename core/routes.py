@@ -53,6 +53,7 @@ def peakpage(peak):
 @app.route('/<peak>/log', methods=['GET', 'POST'])
 @login_required
 def log(peak):
+    miles = 0
     if current_user.is_authenticated:
         user_ID = current_user.userID
     else:
@@ -63,28 +64,37 @@ def log(peak):
     if form.validate_on_submit():
         userData = userPeak(userID=user_ID, peakID=peak_ID, date=form.date.data, startTime=form.startTime.data, endTime=form.endTime.data, miles=form.miles.data, avHR=form.avHR.data, steps=form.steps.data)
         db.session.add(userData)
+ 
 
-        a = userData.miles
-        b = Decimal(10.00)
-        print(b.compare(a))
-        if b.compare(a) == -1 and not db.session.execute(db.select(userAchievement).filter_by(userID=user_ID, achievementID=3)).scalar():
-            userMiles = userAchievement(userID=user_ID, achievementID=1)
-            db.session.add(userMiles)
-
-        numHikes = db.session.query(userPeak).filter_by(userID=user_ID, peakID=peak_ID).count()
-        if not db.session.execute(db.select(userAchievement).filter_by(userID=user_ID, achievementID=1)).scalar():
+        if db.session.execute(db.select(userAchievement).filter_by(userID=user_ID, achievementID=1)).scalar() == None:
+            print("hello")
+            print(db.session.execute(db.select(userAchievement).filter_by(userID=user_ID, achievementID=1)).scalar())
             userFirst = userAchievement(userID=user_ID, achievementID=1)
             db.session.add(userFirst)
-        if numHikes and numHikes == 5 and not db.session.execute(db.select(userAchievement).filter_by(userID=user_ID, achievementID=2)).scalar():
+
+
+        a = Decimal(userData.miles)
+        b = Decimal(10.00)
+        if b.compare(a) == -1 and (db.session.execute(db.select(userAchievement).filter_by(userID=user_ID, achievementID=3)).scalar() == None):
+            userMiles = userAchievement(userID=user_ID, achievementID=3)
+            db.session.add(userMiles)
+
+        numHikes = db.session.query(userPeak.peakID).filter_by(userID=user_ID).distinct().count()
+        print(numHikes)
+
+
+        if numHikes and (numHikes > 4) and not db.session.execute(db.select(userAchievement).filter_by(userID=user_ID, achievementID=2)).scalar():
             userHalf = userAchievement(userID=user_ID, achievementID=2)
             db.session.add(userHalf)
 
         numSteps = db.session.query(func.sum(userPeak.steps).filter(userPeak.userID==user_ID)).all()
-        print(numSteps)
         if numSteps and numSteps[0][0] > 100000 and not db.session.execute(db.select(userAchievement).filter_by(userID=user_ID, achievementID=4)).scalar():
             userSteps = userAchievement(userID=user_ID, achievementID=4)
             db.session.add(userSteps)
+
         db.session.commit()
+        db.session.close()
+
         flash('Your hike has been logged!', 'success')
         return redirect(url_for('peakpage', peak=peak))
     return render_template('log.html', title='Log', form=form)
@@ -99,6 +109,7 @@ def register():
         user = User(firstName=form.firstname.data, lastName=form.lastname.data, userName=form.username.data, emailAddress=form.email.data, password=password_hashed)
         db.session.add(user)
         db.session.commit()
+        db.session.close()
         flash('Thank you! Your account has been registered.', 'success')
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
