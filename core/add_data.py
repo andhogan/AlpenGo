@@ -124,7 +124,7 @@ Achievements = [{
     {'achievementID': 3,
     'achievement': 'Long Trek',
     'description': "You just logged a hike over 10 miles!"},
-    {'achievementID': 3,
+    {'achievementID': 4,
     'achievement': 'Century Steps',
     'description': "You've logged over 100,000 steps!"},
 ]
