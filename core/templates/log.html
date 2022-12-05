@@ -5,61 +5,61 @@
             <form method="POST" action="">
                 {{ form.hidden_tag() }}
                 <fieldset>
-                    <div class="row pt-2 pb-3 border-bottom">
+                    <div class="row pt-2 pb-3 border-bottom mx-auto">
                         <div class="col-12">
                             <h3>Log Hike</h3>
                         </div>
                     </div>
                     <div class="row py-3 border-bottom">
-                        <div class="col-6">
+                        <div class="col-12 mx-auto">
                             <h5>{{ form.date.label() }}</h5>
                         </div>
-                        <div class="col-6">
+                        <div class="col-6 mx-auto">
                             {{ form.date(class="form-control") }}
                         </div>
                     </div>
                     <div class="row py-3 border-bottom">
-                        <div class="col-6">
+                        <div class="col-12 mx-auto">
                            <h5>{{ form.startTime.label() }}</h5>
                         </div>
-                        <div class="col-6">
+                        <div class="col-6 mx-auto">
                             {{ form.startTime(class="form-control") }}
                         </div>
                     </div>
                     <div class="row py-3 border-bottom">
-                        <div class="col-6">
+                        <div class="col-12 mx-auto">
                             <h5>{{ form.endTime.label() }}</h5>
                         </div>
-                        <div class="col-6">
+                        <div class="col-6 mx-auto">
                             {{ form.endTime(class="form-control") }}
                         </div>
                     </div>
                     <div class="row py-3 border-bottom">
-                        <div class="col-6">
+                        <div class="col-12 mx-auto">
                             <h5>{{ form.miles.label() }}</h5>
                         </div>
-                        <div class="col-6">
+                        <div class="col-6 mx-auto">
                             {{ form.miles(class="form-control") }}
                         </div>
                     </div>
                     <div class="row py-3 border-bottom">
-                        <div class="col-6">
+                        <div class="col-12 mx-auto">
                             <h5>{{ form.avHR.label() }}</h5>
                         </div>
-                        <div class="col-6">
+                        <div class="col-6 mx-auto">
                             {{ form.avHR(class="form-control") }}
                         </div>
                     </div>
                     <div class="row py-3 border-bottom">
-                        <div class="col-6">
+                        <div class="col-12 mx-auto">
                             <h5>{{ form.steps.label() }}</h5>
                         </div>
-                        <div class="col-6">
+                        <div class="col-6 mx-auto">
                             {{ form.steps(class="form-control") }}
                         </div>
                     </div>
                     <div class="row py-3">
-                        <div class="col-12">
+                        <div class="col-12 mx-auto">
                             {{ form.submit(class="button") }}
                         </div>
                     </div>

@@ -3,7 +3,7 @@
     <head>
         <!-- CSS only - Impoted from the Bootstrap Website-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-        <link href="static/css/main.css" rel="stylesheet" type="text/css">
+        <link href="{{ url_for('static', filename = 'css/main.css') }}" rel="stylesheet" type="text/css">
 
         <!--Leverage url_for to link to the main css stylesheet-->
         <!--link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}"-->
@@ -16,26 +16,26 @@
             <div class="container">
               <ul class="navbar-nav">
                 <li class="nav-item active">
-                  <a class="nav-link" href="/">Home</a>
+                  <a class="nav-link" href="{{ url_for('home') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/about">About</a>
+                  <a class="nav-link" href="{{ url_for('about') }}">About</a>
                 </li>
                 {% if current_user.is_authenticated %}
                   <li class="nav-item">
-                    <a class="nav-link" href="logout">Logout</a>
+                    <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
                   </li>
                 {% else %}
                 <li class="nav-item">
-                  <a class="nav-link" href="login">Login</a>
+                  <a class="nav-link" href="{{ url_for('login') }}">Login</a>
                 </li>
                 {% endif %}
                 <li class="nav-item">
-                    <a class="nav-link" href="peaks">Peaks</a>
+                    <a class="nav-link" href="{{ url_for('peakselection') }}">Peaks</a>
                 </li>
                 {% if current_user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link" href="achievements">Achievements</a>
+                    <a class="nav-link" href="{{ url_for('achievements') }}">Achievements</a>
                 </li>
                 {% endif %}
               </ul>
