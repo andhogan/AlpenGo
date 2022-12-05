@@ -1,6 +1,24 @@
 {% extends "inherit.html" %}
 {% block content %}
-    <div>
-        <p>I am the About Page!</p>
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+          <img src="static/imgs/home_imgs/RedCloud.jpeg"
+            class="img-fluid" style="padding-top: 10px">
+        </div>
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+            <div class="row3">
+                <h1>About Us</h1>
+            </div>
+            <div class="row2">
+                <p>This application was designed as a class project by Alex Jocius, Andrew Hogan, and Katie Sobczak for CSPB 3308.</p>
+                <p>The idea behind it is to have a way to keep track of your progress while taking on the feat of hiking all of Colorado's 14,000 ft mountains.</p>
+                <p></p>
+            </div>
+        </div>
+      </div>
     </div>
+</section>
+
 {% endblock content %}
