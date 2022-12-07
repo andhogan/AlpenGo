@@ -36,7 +36,7 @@ def peakselection():
 
 
 # Displays the selection of the specific peak on the Peaks Page, displaying Mountain Peak stats & User stats
-@app.route('/<peak>')
+@app.route('/peaks/<peak>')
 @login_required
 def peakpage(peak):
     if current_user.is_authenticated:
@@ -44,6 +44,7 @@ def peakpage(peak):
     else:
         userID = None
     peak_select = db.session.execute(db.select(Peak).filter_by(name=peak)).scalar()
+    print (peak_select)
     peakID = peak_select.peakID
     user_peaks = db.session.execute(db.select(userPeak).filter_by(userID=userID, peakID=peakID)).scalar()
     return render_template('peak.html', title=f'{peak}', peak=peak_select, userpeak=user_peaks)
