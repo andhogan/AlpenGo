@@ -29,10 +29,12 @@ def peakselection():
         userID = None
     peaks = db.session.execute(db.select(Peak)).scalars()
     if userID:
-        user_peaks = db.session.execute(db.select(userPeak.peakID).filter_by(userID=userID)).scalars()
+        user_peaks = db.session.execute(db.select(userPeak.peakID).filter_by(userID=userID)).scalars().all()
     else:
         user_peaks = None
-    return render_template('peakselection.html', title='Peaks', peaks=peaks, user_peaks=user_peaks)
+    if not user_peaks:
+        user_peaks=None
+    return render_template('peakselection.html', title='Peaks', peaks=peaks, userpeaks=user_peaks)
 
 
 # Displays the selection of the specific peak on the Peaks Page, displaying Mountain Peak stats & User stats
@@ -44,7 +46,6 @@ def peakpage(peak):
     else:
         userID = None
     peak_select = db.session.execute(db.select(Peak).filter_by(name=peak)).scalar()
-    print (peak_select)
     peakID = peak_select.peakID
     user_peaks = db.session.execute(db.select(userPeak).filter_by(userID=userID, peakID=peakID)).scalar()
     return render_template('peak.html', title=f'{peak}', peak=peak_select, userpeak=user_peaks)
