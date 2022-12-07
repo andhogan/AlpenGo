@@ -48,12 +48,21 @@ Ex: `python -m venv alpengo`
 
 `pip freeze > requirements.txt`
 
-### 2. Run the included `alpengo_db.py` to initialize a SQLite DB with dummy data:
+### 2. Activate the Flask app with `python run.py`
+
+### 3. Access the app via http://localhost:5000
+
+* Click login, register for an account (no actual email is sent)
+* Navigate the pages at your discretion.
+* Click Peaks, find a mountain to examine its information.
+* Click on Log Hike, input your stats "after the hike."
+* Check back to Achievements to see if you've acquired something.
+* Log more hikes! Have fun!
+
+### Optional. Run the included `alpengo_db.py` to initialize a SQLite DB with dummy data:
 
 `python alpengo_db.py`
 * This will create an `alpengo_db` file within the same directory as the `alpengo_db.py`, ideally within the same directory as the `alpengo_app.py`.
-
-### 3. To Be Continued... 
 
 
 Project Tracking Software Link: Trello - https://trello.com/w/akaworkspace5
