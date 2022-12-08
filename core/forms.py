@@ -10,7 +10,7 @@ class LogForm(FlaskForm):
     startTime = TimeField('Start Time', validators=[DataRequired()])
     endTime = TimeField('End Time', validators=[DataRequired()])
     miles = DecimalField('Miles', validators=[DataRequired()])
-    avHR = IntegerField('Av. HR', validators=[DataRequired()])
+    avHR = IntegerField('Avg. Heart Rate', validators=[DataRequired()])
     steps = IntegerField('Steps', validators=[DataRequired()])
     submit = SubmitField('Log Hike')
 
