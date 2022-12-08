@@ -1,7 +1,6 @@
 from flask import render_template, url_for, flash, redirect, request
 from application import app, db, bcrypt
 from forms import LogForm, LoginForm, RegistrationForm
-import alpengo_data
 from models import userAchievement, userPeak, User, Peak, Achievement
 from flask_login import login_user, current_user, login_required, logout_user
 from sqlalchemy import func
