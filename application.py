@@ -4,8 +4,6 @@ from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 import os
 
-import routes
-import alpengo_data
 
 basedir = os.getcwd()
 
