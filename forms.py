@@ -1,9 +1,9 @@
 from flask_wtf import FlaskForm
-from core import db
+from application import db
 from wtforms import StringField, PasswordField, DateField, TimeField, DecimalField, IntegerField, SubmitField
 from wtforms.validators import DataRequired, Length, Email, ValidationError
 from wtforms.widgets import PasswordInput
-from core.models import User
+from models import User
 
 class LogForm(FlaskForm):
     date = DateField('Date', format='%Y-%m-%d', validators={DataRequired()})

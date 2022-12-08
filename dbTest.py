@@ -1,9 +1,9 @@
 from flask import Flask
-from app import db
+from application import db
 
 import unittest
 
-from core.models import user_achievement, user_peak, User, Peak, Achievement
+from models import user_achievement, user_peak, User, Peak, Achievement
 
 class dbTest(unittest.TestCase):
 
