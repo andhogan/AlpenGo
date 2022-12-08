@@ -30,7 +30,10 @@
                             {{ form.email(class="form-control") }}
                       {% endif %}
                       {{ form.email.label(class="form-control-label")}}
-                    </div>
+                    <div class="form-group" style="padding-top:10px; padding-left:15px">
+                  {{ form.submit(class="sub_button") }}
+                </div>
+                    </div>                 
                     <div class="col-5 mx-auto">
                       {% if form.username.errors %}
                         {{ form.username(class="form-control is-invalid") }}
@@ -50,10 +53,7 @@
                       {{ form.state(class="form-control") }}
                       {{ form.state.label(class="form-control-label")}}
                     </div>
-                </div>
-                <div class="form-group" style="padding-top:10px; padding-left:15px">
-                  {{ form.submit(class="sub_button") }}
-                </div>
+                </div>              
               </form>
             </div>
           </div>
