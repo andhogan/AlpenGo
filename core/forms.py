@@ -23,7 +23,7 @@ class RegistrationForm(FlaskForm):
     firstname = StringField('First Name', validators=[DataRequired()])
     lastname = StringField('Last Name', validators=[DataRequired()])
     username = StringField('Username', validators=[DataRequired()])
-    password = StringField('Password', validators=[DataRequired()])
+    password = StringField('Password', validators=[DataRequired()], widget=PasswordInput(hide_value=False))
     email = StringField('Email', validators=[DataRequired()])
     city= StringField('City', validators=[DataRequired()])
     state= StringField('State', validators=[DataRequired()])
