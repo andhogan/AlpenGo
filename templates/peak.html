@@ -1,0 +1,171 @@
+{% extends "inherit.html" %}
+{% block content %}
+    <main>
+        <div class="container text-center pt-2">
+            <div class="row mx-auto border-bottom pb-3">
+                <div class="col-7 mx-auto">
+                    <div class="row pb-2 pt-5">
+                        <div class="col">
+                            <h1>{{ peak.name }}</h1>
+                        </div>
+                    </div>
+                    <div class="row pb-5">
+                        <div class="col gy-3">
+                            Class {{ peak.peakClass}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="d-grid col mx-auto pt-5 gx-5">
+                            <a class="button" href=" {{ url_for('log', peak=peak.name) }}" role="button">Log Route</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5 mx-auto">
+                    <img src="/static/imgs/peak_imgs/{{ peak.name }}.JPG" class="float-end w-100" alt="{{ peak.name }}">
+                </div>
+            </div>
+            <div class="row border-bottom py-2">
+                <div class="col text-start">
+                    {{ peak.description }}
+                </div>
+            </div>
+            <div class="row h">
+                <div class="col-7 mx-auto">
+                    <div class="row align-top pt-3 pb-4">
+                        <div class="col">
+                            <h5>Mountain Stats</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="row pb-1">
+                                <div class="col">
+                                    <h6>Start</h6>
+                                </div>
+                                <div class="col">
+                                    <h6>Summit</h6>
+                                </div>
+                                <div class="col">
+                                    <h6>Elevation Gain</h6>
+                                </div>
+                            </div>
+                            <div class="row pb-4">
+                                <div class="col">
+                                    {{ peak.startElevation }}
+                                </div>
+                                <div class="col">
+                                    {{ peak.summitElevation }}
+                                </div>
+                                <div class="col">
+                                    {{ peak.elevationGain }}
+                                </div>
+                            </div>
+                            <div class="row pb-1">
+                                <div class="col">
+                                    <h6>Length</h6>
+                                </div>
+                                <div class="col">
+                                    <h6>Av. Time</h6>
+                                </div>
+                                <div class="col">
+                                    <h6>Route Type</h6>
+                                </div>
+                            </div>
+                            <div class="row pb-4 border-bottom">
+                                <div class="col">
+                                    {{ peak.length }}
+                                </div>
+                                <div class="col">
+                                    {{ peak.avTime }}
+                                </div>
+                                <div class="col">
+                                    {{ peak.routeType }}
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                    <div class="row align-top pt-3 pb-4">
+                        <div class="col">
+                            <h5>My Stats</h5>
+                        </div>
+                    </div>
+                    <div class="row h-5">
+                        <div class="col">
+                            <div class="row pb-1">
+                                <div class="col">
+                                    <h6>Date</h6>
+                                </div>
+                                <div class="col">
+                                    <h6>Start Time</h6>
+                                </div>
+                                <div class="col">
+                                    <h6>End Time</h6>
+                                </div>
+                            </div>
+                            <div class="row pb-4">
+                                <div class="col">
+                                    {% if userpeak %}
+                                        {{ userpeak.date }}
+                                    {% else %}
+                                        -
+                                    {% endif %}
+                                </div>
+                                <div class="col">
+                                    {% if userpeak %}
+                                        {{ userpeak.startTime }}
+                                    {% else %}
+                                        -
+                                    {% endif %}
+                                </div>
+                                <div class="col">
+                                    {% if userpeak %}
+                                        {{ userpeak.endTime}}
+                                    {% else %}
+                                        -
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="row pb-1">
+                                <div class="col">
+                                    <h6>Miles</h6>
+                                </div>
+                                <div class="col">
+                                    <h6>Av. HR</h6>
+                                </div>
+                                <div class="col">
+                                    <h6>Steps</h6>
+                                </div>
+                            </div>
+                            <div class="row pb-4">
+                                <div class="col">
+                                    {% if userpeak %}
+                                        {{ userpeak.miles }}
+                                    {% else %}
+                                        -
+                                    {% endif %}
+                                </div>
+                                <div class="col">
+                                    {% if userpeak %}
+                                        {{ userpeak.avHR }}
+                                    {% else %}
+                                        -
+                                    {% endif %}
+                                </div>
+                                <div class="col">
+                                    {% if userpeak %}
+                                        {{ userpeak.steps }}
+                                    {% else %}
+                                        -
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+                <div class="col-5 mx-auto gy-3">
+                    <img src="/static/imgs/map_imgs/{{ peak.name }} Topo.JPG" class="img-fluid  w-100 h-100" alt="{{ peak.name }}">
+                </div>
+            </div> 
+        </div>
+    </main>
+{% endblock content %}

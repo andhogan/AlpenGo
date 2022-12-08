@@ -1,0 +1,62 @@
+{% extends "inherit.html" %}
+{% block content %}
+<section class="h-100 h-custom" style="background-color: rgba(171, 201, 211, .35);">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-8 col-xl-6">
+          <div class="card rounded-3">
+            <img src="static/imgs/home_imgs/registration.jpeg"
+              class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+              alt="registration photo">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 mx-auto">Sign Up, Get Hiking!</h3>
+  
+              <form method="POST" action="" novalidate>
+                {{ form.hidden_tag() }}
+                <div class="row form-group">
+                    <div class="col-5 mx-auto">
+                      {{ form.firstname(class="form-control") }}
+                      {{ form.firstname.label(class="form-control-label")}}
+                      {% if form.username.errors %}
+                        {{ form.username(class="form-control is-invalid") }}
+                          {% for error in form.username.errors %}
+                            <div class="invalid-feedback">
+                              <span>{{ error }}</span>
+                            </div>
+                          {% endfor %}
+                      {% else %}
+                            {{ form.username(class="form-control") }}
+                      {% endif %}
+                      {{ form.username.label(class="form-control-label")}}
+                      {% if form.email.errors %}
+                        {{ form.email(class="form-control is-invalid") }}
+                          {% for error in form.email.errors %}
+                            <div class="invalid-feedback">
+                              <span>{{ error }}</span>
+                            </div>
+                          {% endfor %}
+                      {% else %}
+                            {{ form.email(class="form-control") }}
+                      {% endif %}
+                      {{ form.email.label(class="form-control-label")}}
+                    </div>
+                    <div class="col-5 mx-auto">
+                      {{ form.lastname(class="form-control") }}
+                      {{ form.lastname.label(class="form-control-label")}}
+                      {{ form.password(class="form-control") }}
+                      {{ form.password.label(class="form-control-label")}}
+                      {{ form.city_state(class="form-control") }}
+                      {{ form.city_state.label(class="form-control-label")}}
+                    </div>
+                </div>
+                <div class="form-group" style="padding-top:10px; padding-left:15px">
+                  {{ form.submit(class="sub_button") }}
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock content %}
