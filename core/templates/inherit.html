@@ -14,13 +14,21 @@
         <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(171, 201, 211);">
             <a class="navbar-brand" href="/about">AlpenGo</a>
             <div class="container">
-              <ul class="navbar-nav">
+              <ul class="navbar-nav" style="margin-left: auto;">
                 <li class="nav-item active">
                   <a class="nav-link" href="{{ url_for('home') }}">Home</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{{ url_for('about') }}">About</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('peakselection') }}">Peaks</a>
+                </li>
+                {% if current_user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('achievements') }}">Achievements</a>
+                </li>
+                {% endif %}
                 {% if current_user.is_authenticated %}
                   <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
@@ -28,14 +36,6 @@
                 {% else %}
                 <li class="nav-item">
                   <a class="nav-link" href="{{ url_for('login') }}">Login</a>
-                </li>
-                {% endif %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('peakselection') }}">Peaks</a>
-                </li>
-                {% if current_user.is_authenticated %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('achievements') }}">Achievements</a>
                 </li>
                 {% endif %}
               </ul>

@@ -112,8 +112,10 @@ def register():
         db.session.add(user)
         db.session.commit()
         db.session.close()
+        logUser = db.session.execute(db.select(User).filter_by(userName=form.username.data)).scalar()
+        login_user(logUser)
         flash('Thank you! Your account has been registered.', 'success')
-        return redirect(url_for('login'))
+        return redirect(url_for('achievements', userID=logUser.userID))
     return render_template('register.html', title='Register', form=form)
 
 
