@@ -1,4 +1,4 @@
-Project Title: AlpenGo - A Data Driven Guide
+## Project Title: AlpenGo - A Data Driven Guide
 
 Team Number: 2
 Team Name: AKA
@@ -66,3 +66,7 @@ Ex: `python -m venv alpengo`
 
 
 Project Tracking Software Link: Trello - https://trello.com/w/akaworkspace5
+
+Project Presentation Link: https://docs.google.com/presentation/d/1IoxsS67T_rjAYFKSHxy761sU6cOC7KdIMRlYL0m8LUU/edit?usp=sharing
+
+Project Demo: YOUTUBE LINK HERE
