@@ -24,6 +24,8 @@ Mitigation Strategy for Risks:
 
 Development Method: Scrum – Leverage agile and scrum methodologies to quickly add product value through weekly and biweekly sprints while balancing desired customer goals.
 
+---
+
 ## Setup
 ### 0. (Optional) Recommended to create a virtual environment:
 
