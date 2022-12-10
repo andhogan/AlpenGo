@@ -14,4 +14,4 @@ There were a few things we would have liked to add to the application but were u
    * We would have liked to add a location feature based on the user's current location that would suggest peaks closest to them.
    * We would also have liked to have merged a lifetime stats page that recorded cumulative additions to user stats over multiple hikes along with the user achievements page offering forward facing view of all available achievements to acquire. 
  * ##### Known problems (bugs, issues)
-As we were testing and playing around with the site we did come accross a few bugs. Most were fixed before deployment. One that was not was the ability to see user stats on the peak page. The only "My Stats" that show are the first ones logged for the trip, and logging new stats does not overwrite the first hike's.
+As we were testing and playing around with the site we did come accross a few bugs. Most were fixed before deployment. One that was not was the ability to see newly logged user stats beyond the first trip on the peak page. The only "My Stats" that show are the first ones logged for the trip, and logging new stats does not overwrite the first hike's.
