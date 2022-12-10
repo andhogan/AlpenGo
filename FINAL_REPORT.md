@@ -12,4 +12,4 @@
  * ##### What we had planned for the future
    * We would have liked to add a location feature based on the user's current location that would suggest peaks closest to them.
  * ##### Known problems (bugs, issues)
-   *
+   * As we were testing and playing around with the site we did come accross a few bugs. Most were fixed before deployment. One that was not was the ability to see user stats on the peak page. The only "My Stats" that show are the first ones logged and if you log new stats over top of those it does not show them it just continues to show you the original logged stats.
